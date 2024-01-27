@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ["var(--font-roboto)"],
+        adam: ["var(--font-adam)"],
+      },
+      colors: {
+        primary: "#5BCB55",
+        secondary: "#398533",
+        dark: "#183A16",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
