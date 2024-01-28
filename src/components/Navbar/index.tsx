@@ -16,6 +16,7 @@ export default function Navbar() {
             alt="Logo"
             width={200}
             height={200}
+            className="unselectable undraggable"
           />
         </Link>
         <div className="gap-9 xl:flex md:flex hidden">
