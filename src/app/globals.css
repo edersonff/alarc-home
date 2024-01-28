@@ -10,7 +10,7 @@ body{
   @apply max-w-[1140px] mx-auto;
 }
 
-div:has(.content){
+*:has(> .content){
   @apply px-4;
 }
 
@@ -31,4 +31,13 @@ div:has(.content){
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+}
+
+br {
+  @apply block mb-10;
+  content: ""; 
+}
+
+hr{
+  @apply w-full border-dark/35;
 }
