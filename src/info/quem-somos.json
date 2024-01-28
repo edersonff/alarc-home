@@ -2,7 +2,8 @@
     "title": "Quem Somos",
     "label": "Quem <span class='font-bold block'>SOMOS</span>",
     "background": "/images/banner/quem-somos.jpg",
-    "image": "/images/hero/quem-somos.png",
-    "text": "Fundada em 2018, e em forte expansão desde então, a ALARC é uma empresa de serviços de e-commerce completa. \nNossos clientes se ocupam com a operação física de compras e logística. Nós fazemos todo o resto, desde atendimento, chamados, anúncios, marketing, fotos, entre outros. \nFazemos o que for preciso para que a operação de nossos clientes no e-commerce seja um sucesso absoluto.",
-    "href": "/quem-somos"
+    "image": "/images/hero/quem-somos.svg",
+    "text": "Fundada em 2018, e em forte expansão desde então, a ALARC é uma empresa de serviços de e-commerce completa. <br/>Nossos clientes se ocupam com a operação física de compras e logística. Nós fazemos todo o resto, desde atendimento, chamados, anúncios, marketing, fotos, entre outros. <br/>Fazemos o que for preciso para que a operação de nossos clientes no e-commerce seja um sucesso absoluto.",
+    "href": "/quem-somos",
+    "redirect": "google.com.br"
 }

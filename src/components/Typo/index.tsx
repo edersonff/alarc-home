@@ -12,7 +12,7 @@ export function Info({
     return (infoData[info] as any)[text];
   }, [info, text]);
 
-  return <span dangerouslySetInnerHTML={{ __html: infoText }} />;
+  return <span dangerouslySetInnerHTML={{ __html: infoText || "" }} />;
 }
 
 export const typoStyles = {
@@ -27,33 +27,30 @@ export const typoStyles = {
   },
   sectionTitle: {
     class:
-      "text-dark text-[40px] font-light font-['Adam'] leading-[44px] tracking-[5.20px]",
+      "text-dark text-[40px] font-bold font-['Adam'] uppercase leading-[44px] tracking-[5.20px]",
     tag: "h2",
   },
   paragraph: {
-    class: "text-dark text-xl font-normal leading-[50px] tracking-wide",
+    class: "text-dark text-xl font-normal leading-[50px] tracking-wide ",
     tag: "p",
   },
   button: { class: "text-xl font-bold", tag: "span" },
   agency: { class: "text-black text-[32px] font-semibold", tag: "span" },
 };
 
-export function Typo({
-  children,
-  className,
-  typo,
-  ...props
-}: {
+type TypoProps = {
   children: React.ReactNode;
   className?: string;
   typo: keyof typeof typoStyles;
-} & JSX.IntrinsicElements["p"]) {
+} & JSX.IntrinsicElements["p"];
+
+export function Typo({ children, className, typo, ...props }: TypoProps) {
   const style = useMemo(() => {
     return typoStyles[typo];
   }, [typo]);
 
   return (
-    <style.tag className={`${className} ${style.class}`} {...(props as any)}>
+    <style.tag className={style.class + " " + className} {...(props as any)}>
       {children}
     </style.tag>
   );
