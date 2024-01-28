@@ -1,13 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import { Info, Typo } from "../Typo";
 import { BsArrowRightCircle } from "react-icons/bs";
 import TouchRipple, {
   TouchRippleProps,
 } from "@material-ui/core/ButtonBase/TouchRipple";
 import Link from "next/link";
+import {
+  academia,
+  canaisAtuacao,
+  nossosClientes,
+  noticias,
+  quemSomos,
+  tools,
+} from "@/info";
 
 export default function Blocks() {
   return (
@@ -24,10 +32,14 @@ export default function Blocks() {
                 className="unselectable undraggable"
               />
             </Block>
-            <Block className="bg-secondary flex-1 text-white">
+            <Block
+              className="bg-secondary flex-1 text-white"
+              href={academia.href}
+              target="_blank"
+            >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
-                  <Info info="quemSomos" text="label" />
+                  <Info info="academia" text="label" />
                 </Typo>
                 <BsArrowRightCircle className="text-white text-[54px]" />
               </div>
@@ -35,14 +47,20 @@ export default function Blocks() {
           </div>
 
           <div className="flex-1 gap-8 flex flex-col">
-            <Block className="bg-primary flex-1 text-white">
+            <Block
+              className="bg-primary flex-1 text-white"
+              href={quemSomos.href}
+            >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
                   <Info info="quemSomos" text="label" />
                 </Typo>
               </div>
             </Block>
-            <Block className="bg-neutral-200 text-black flex-1">
+            <Block
+              className="bg-neutral-200 text-black flex-1"
+              href={tools.href}
+            >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
                   <Info info="tools" text="label" />
@@ -52,14 +70,20 @@ export default function Blocks() {
           </div>
 
           <div className="flex-1 gap-8 flex flex-col">
-            <Block className="bg-neutral-200 flex-1 text-black">
+            <Block
+              className="bg-neutral-200 flex-1 text-black"
+              href={nossosClientes.href}
+            >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
                   <Info info="nossosClientes" text="label" />
                 </Typo>
               </div>
             </Block>
-            <Block className="bg-secondary text-white flex-1">
+            <Block
+              className="bg-secondary text-white flex-1"
+              href={canaisAtuacao.href}
+            >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
                   <Info info="canaisAtuacao" text="label" />
@@ -69,21 +93,18 @@ export default function Blocks() {
           </div>
 
           <div className="flex-1 gap-8 flex flex-col">
-            <Block className="bg-neutral-200 h-44 center">
-              <Image
-                src="/alarc/logo-gray.svg"
-                loading="eager"
-                alt="Logo"
-                width={200}
-                height={200}
-              />
+            <Block className="bg-neutral-200 h-44" href={noticias.href}>
+              <div className="w-full">
+                <Typo typo="block" className="mb-3">
+                  <Info info="noticias" text="label" />
+                </Typo>
+              </div>
             </Block>
             <Block className="bg-black flex-1 text-white">
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
-                  <Info info="quemSomos" text="label" />
+                  <Info info="contato" text="label" />
                 </Typo>
-                <BsArrowRightCircle className="text-white text-[54px]" />
               </div>
 
               <Image
@@ -105,33 +126,42 @@ export default function Blocks() {
 export function Block({
   className,
   children,
+  href,
+  target,
 }: {
   className: string;
   children: React.ReactNode;
+  href?: string;
+  target?: string;
 }) {
-  const rippleRef = useRef<TouchRippleProps>(null);
+  const rippleRef = useRef<any>(null);
+
   const onRippleStart = (e) => {
     if (!rippleRef.current) return;
     rippleRef.current.start(e);
   };
+
   const onRippleStop = (e) => {
     if (!rippleRef.current) return;
     rippleRef.current.stop(e);
   };
 
+  const Tag = useMemo(() => (href ? Link : "div"), [href]);
+
   return (
-    <Link
-      href="#"
+    <Tag
+      href={href || ""}
+      target={target}
       onMouseDown={onRippleStart}
       onMouseLeave={onRippleStop}
       onMouseUp={onRippleStop}
       className={
-        "flex flex-col justify-end items-center p-6 overflow-hidden rounded-[17px] relative z-10 unselectable undraggable " +
+        "flex flex-col justify-end items-center p-6 overflow-hidden rounded-[17px] relative z-10 unselectable undraggable min-h-52 cursor-pointer " +
         className
       }
     >
       <TouchRipple ref={rippleRef} />
       {children}
-    </Link>
+    </Tag>
   );
 }
