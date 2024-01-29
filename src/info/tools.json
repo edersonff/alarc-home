@@ -2,7 +2,8 @@
     "title": "Alarc Tools",
     "label": "Alarc <span class='font-bold block'>TOOLS</span>",
     "background": "/images/banner/tools.jpg",
-    "image": "/images/hero/tools.png",
-    "text": "",
-    "href": "/alarc-tools"
+    "image": "/images/hero/tools.jpg",
+    "text": "As ferramentas ALARC são para uso exclusivo nas contas de nossos clientes. Nossas ferramentas ampliam nossa eficiência de trabalho em conjunto com os sistemas ERPs e outras ferramentas de mercado. </br>Algumas das funções das ferramentas ALARC: <li>Controle de preço de estoque do Mercado Livre </li><li>Relatórios de vendas detalhados por canal </li><li>Automatização de carga FULL Mercado Livre </li><li>Automatização de ADS Mercado Livre </li>",
+    "href": "/alarc-tools",
+    "redirect": "https://google.com.br"
 }
