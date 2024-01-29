@@ -18,7 +18,7 @@ export default function Partner({
               src={image}
               alt={title}
               layout="fill"
-              className="object-scale-down"
+              className="object-scale-down grayscale hover:grayscale-0 transition-all duration-500 ease-in-out cursor-pointer"
             />
           </div>
         ))}
