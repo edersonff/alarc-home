@@ -24,6 +24,10 @@ export const adam = localFont({
   ],
 });
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
