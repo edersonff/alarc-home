@@ -15,7 +15,7 @@ export default function Testimonials() {
       }}
     >
       {[1, 2, 3, 4, 5].map((item) => (
-        <SwiperSlide>
+        <SwiperSlide key={item}>
           <div className="center bg-red-600 text-white text-xl font-bold w-full h-[20vh]">
             Slide {item}
           </div>
