@@ -21,7 +21,7 @@ export default function QuemSomos() {
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>
         <img
-          className="absolute right-0 w-[35%] h-[70vh] object-scale-down object-right xl:block lg:block hidden"
+          className="absolute right-0 w-[35%] h-[60vh] object-scale-down object-right xl:block lg:block hidden"
           src={quemSomos.image}
           alt="Quem Somos"
         />

@@ -16,12 +16,13 @@ import {
   quemSomos,
   tools,
 } from "@/info";
+import { FaCirclePlus } from "react-icons/fa6";
 
 export default function Blocks() {
   return (
     <div className="w-full">
       <div className="content">
-        <div className="flex gap-8 columns-4 w-full h-[55vh] min-h-96 xl:flex-row lg:flex-row flex-col">
+        <div className="flex gap-8 columns-4 w-full min-h-[60vh] xl:flex-row lg:flex-row flex-col">
           <div className="flex-1 gap-8 flex flex-col">
             <Block className="bg-neutral-200 h-44 center">
               <Image
@@ -50,6 +51,7 @@ export default function Blocks() {
             <Block
               className="bg-primary flex-1 text-white"
               href={quemSomos.href}
+              plus="text-white"
             >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
@@ -60,6 +62,7 @@ export default function Blocks() {
             <Block
               className="bg-neutral-200 text-black flex-1"
               href={tools.href}
+              plus="text-primary"
             >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
@@ -73,6 +76,7 @@ export default function Blocks() {
             <Block
               className="bg-neutral-200 flex-1 text-black"
               href={nossosClientes.href}
+              plus="text-primary"
             >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
@@ -83,6 +87,7 @@ export default function Blocks() {
             <Block
               className="bg-secondary text-white flex-1"
               href={canaisAtuacao.href}
+              plus="text-white"
             >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
@@ -93,7 +98,11 @@ export default function Blocks() {
           </div>
 
           <div className="flex-1 gap-8 flex flex-col">
-            <Block className="bg-neutral-200 h-44" href={noticias.href}>
+            <Block
+              className="bg-primary text-white h-44"
+              href={noticias.href}
+              plus="text-white"
+            >
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
                   <Info info="noticias" text="label" />
@@ -128,11 +137,13 @@ export function Block({
   children,
   href,
   target,
+  plus,
 }: {
   className: string;
   children: React.ReactNode;
   href?: string;
   target?: string;
+  plus?: string;
 }) {
   const rippleRef = useRef<any>(null);
 
@@ -160,6 +171,11 @@ export function Block({
         className
       }
     >
+      {plus && (
+        <FaCirclePlus
+          className={"absolute top-0 right-0 text-3xl mr-6 mt-6 " + plus}
+        />
+      )}
       <TouchRipple ref={rippleRef} />
       {children}
     </Tag>
