@@ -24,11 +24,11 @@ export const adam = localFont({
   ],
 });
 
+import "./globals.css";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Alarc - Página Inicial",
