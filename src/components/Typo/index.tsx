@@ -36,6 +36,7 @@ export const typoStyles = {
   },
   button: { class: "text-xl font-bold", tag: "span" },
   agency: { class: "text-black text-[32px] font-semibold", tag: "span" },
+  post: { class: "text-black text-[32px] font-medium", tag: "h1" },
 };
 
 type TypoProps = {
@@ -44,13 +45,24 @@ type TypoProps = {
   typo: keyof typeof typoStyles;
 } & JSX.IntrinsicElements["p"];
 
-export function Typo({ children, className, typo, ...props }: TypoProps) {
+export function Typo({
+  children,
+  className,
+  typo,
+  as: tag,
+  ...props
+}: TypoProps & { as?: keyof JSX.IntrinsicElements }) {
   const style = useMemo(() => {
-    return typoStyles[typo];
-  }, [typo]);
+    const type = typoStyles[typo];
+
+    return {
+      class: type.class + " " + className,
+      tag: tag || type.tag,
+    };
+  }, [typo, className, tag]);
 
   return (
-    <style.tag className={style.class + " " + className} {...(props as any)}>
+    <style.tag className={style.class} {...(props as any)}>
       {children}
     </style.tag>
   );
