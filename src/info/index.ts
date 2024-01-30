@@ -6,6 +6,7 @@ import canaisAtuacao from "./canais-atuacao.json";
 import academia from "./academia.json";
 import contato from "./contato.json";
 import noticias from "./noticias.json";
+import posts from "./posts.json";
 
 export const infoData = {
   quemSomos,
@@ -16,6 +17,7 @@ export const infoData = {
   academia,
   contato,
   noticias,
+  posts,
 };
 
 export {
@@ -27,4 +29,5 @@ export {
   academia,
   contato,
   noticias,
+  posts,
 };
