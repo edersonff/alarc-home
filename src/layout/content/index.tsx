@@ -1,7 +1,7 @@
+import ImageLoading from "@/components/Image";
 import Navbar from "@/components/Navbar";
 import { Info, Typo } from "@/components/Typo";
 import { infoData } from "@/info";
-import Image from "next/image";
 import React from "react";
 
 export default function ContentLayout({
@@ -21,7 +21,7 @@ export default function ContentLayout({
             <Info info={info} text="title" />
           </Typo>
         </div>
-        <Image
+        <ImageLoading
           src={data.background}
           alt="Banner"
           layout="fill"
