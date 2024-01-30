@@ -27,7 +27,7 @@ export default function ContentLayout({
           layout="fill"
           objectFit="cover"
           loading="eager"
-          className="absolute top-0 left-0 -z-10 unselectable undraggable"
+          className="-z-10 unselectable undraggable"
         />
       </div>
       <div className="w-full">{children}</div>

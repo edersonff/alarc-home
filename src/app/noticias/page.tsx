@@ -13,11 +13,11 @@ export default function Blog() {
     <div className="flex flex-col gap-20 mb-24">
       <Navbar />
       <div className="w-full">
-        <div className="content flex h-[40vh] gap-[30px]">
+        <div className="content flex xl-lg:flex-row flex-col xl-lg:h-[40vh] gap-[30px]">
           <div className="flex-1 h-full">
             <PostBanner {...posts[0]} size={2} />
           </div>
-          <div className="h-full flex flex-col gap-[30px]">
+          <div className="h-full flex xl-lg:flex-col gap-[30px]">
             <div className="flex-1">
               <PostBanner {...posts[1]} />
             </div>
@@ -75,12 +75,23 @@ export function PostBanner({
     }
   }, [size]);
 
+  const height = useMemo(() => {
+    switch (size) {
+      case 1:
+        return "h-48";
+      case 2:
+        return "h-64";
+    }
+  }, [size]);
+
   return (
     <Link
       href={`/noticias/${slug}`}
       className={
-        "h-full block min-w-[300px] relative rounded-[22px] overflow-hidden group " +
-        padding
+        "xl-lg:h-full block xl-lg:min-w-[300px] h-64 relative rounded-[22px] overflow-hidden group " +
+        padding +
+        " " +
+        height
       }
     >
       <div className="relative z-10 w-full h-full flex flex-col justify-end">
@@ -116,9 +127,9 @@ export function PostCard({ title, slug, text, date, image }: {} & PostType) {
   return (
     <Link
       href={`/noticias/${slug}`}
-      className="flex w-full relative group gap-[30px] min-h-72 "
+      className="flex xl-lg:flex-row flex-col w-full relative group gap-[30px] min-h-72 "
     >
-      <div className="min-w-[450px] overflow-hidden relative rounded-[22px]">
+      <div className="xl-lg:min-w-[450px] min-w-full xl-lg:min-h-fit min-h-[300px] overflow-hidden relative rounded-[22px]">
         <div className="w-full h-full absolute bg-white bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-150" />
         <Image
           src={image}

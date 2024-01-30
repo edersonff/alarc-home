@@ -18,9 +18,12 @@ export default function NossosClientes() {
           <Info info="nossosClientes" text="text" />
         </Typo>
         <div className="center flex-col gap-[70px] w-full mt-16">
-          <h2 className="py-[4px] px-[70px] bg-neutral-600 text-white font-['Adam'] text-[40px] font-bold uppercase">
+          <Typo
+            typo="sectionTitle"
+            className="xl-lg:px-[70px] text-center px-10 py-[10px] bg-neutral-600 text-white uppercase"
+          >
             O que as pessoas dizem
-          </h2>
+          </Typo>
           <Testimonials />
         </div>
         <div className="center w-full gap-[30px] mt-16">

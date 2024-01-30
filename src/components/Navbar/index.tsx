@@ -19,7 +19,7 @@ export default function Navbar() {
             className="unselectable undraggable"
           />
         </Link>
-        <div className="gap-[30px] xl:flex md:flex hidden">
+        <div className="gap-[30px] xl-lg:flex hidden">
           <div className="justify-end items-center gap-[30px] inline-flex">
             {pages.map((page) => (
               <Link key={page.href} href={page.href}>

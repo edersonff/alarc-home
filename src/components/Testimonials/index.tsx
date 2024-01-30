@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import React from "react";
+import { Navigation, Pagination } from "swiper/modules";
 
 export default function Testimonials() {
   return (
@@ -7,6 +8,7 @@ export default function Testimonials() {
       spaceBetween={50}
       slidesPerView={3}
       navigation={true}
+      modules={[Navigation, Pagination]}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
       style={{
@@ -14,6 +16,7 @@ export default function Testimonials() {
         height: "100%",
       }}
     >
+      <SwiperSlide />
       {[1, 2, 3, 4, 5].map((item) => (
         <SwiperSlide key={item}>
           <div className="center bg-red-600 text-white text-xl font-bold w-full h-[20vh]">
@@ -21,6 +24,7 @@ export default function Testimonials() {
           </div>
         </SwiperSlide>
       ))}
+      <SwiperSlide />
     </Swiper>
   );
 }

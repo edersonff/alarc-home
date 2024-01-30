@@ -27,16 +27,18 @@ export const typoStyles = {
   },
   sectionTitle: {
     class:
-      "text-dark text-[40px] font-bold font-['Adam'] uppercase leading-[44px] tracking-[5.20px]",
+      "text-dark xl-lg:text-[40px] text-2xl font-bold font-['Adam'] uppercase leading-[44px] tracking-[5.20px]",
     tag: "h2",
   },
   paragraph: {
-    class: "text-dark text-xl font-normal leading-[50px] tracking-wide ",
+    class:
+      "text-dark xl-lg:text-[20px] text-[18px] leading-[50px] tracking-wide ",
     tag: "p",
   },
   button: { class: "text-xl font-bold", tag: "span" },
   agency: { class: "text-black text-[32px] font-semibold", tag: "span" },
   post: { class: "text-black text-[32px] font-medium", tag: "h1" },
+  date: { class: "text-xs leading-normal text-dark/50 font-medium", tag: "p" },
 };
 
 type TypoProps = {
@@ -56,7 +58,7 @@ export function Typo({
     const type = typoStyles[typo];
 
     return {
-      class: type.class + " " + className,
+      class: type.class + " " + String(className),
       tag: tag || type.tag,
     };
   }, [typo, className, tag]);

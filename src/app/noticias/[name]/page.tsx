@@ -24,10 +24,7 @@ export default function Blog({ params }: { params: { name: string } }) {
           <Typo typo="post" className="mb-3">
             {post.title}
           </Typo>
-          <Typo
-            typo="paragraph"
-            className="text-xs leading-normal text-dark/50 font-bold"
-          >
+          <Typo typo="date">
             {post.date} - <b>{post.owner}</b>
           </Typo>
         </div>
@@ -41,8 +38,8 @@ export default function Blog({ params }: { params: { name: string } }) {
               className="object-center"
             />
           </div>
-          <div className="w-full flex gap-[30px]">
-            <div className="w-1/4">
+          <div className="w-full flex xl-lg:flex-row flex-col-reverse xl-lg:gap-[30px] gap-14">
+            <div className="xl-lg:w-1/4">
               <p className="text-[15px] font-bold tracking-wide mb-[18px]">
                 Compartilhar Artigo
               </p>

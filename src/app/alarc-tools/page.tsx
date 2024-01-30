@@ -13,18 +13,18 @@ export default function HeroTools() {
   return (
     <ContentLayout info="tools">
       <div className="content flex flex-col gap-14 my-[72px]">
-        <Typo typo="paragraph" className="lg:w-2/3 xl:w-2/3">
+        <Typo typo="paragraph" className="xl-lg:w-2/3">
           <Info info="tools" text="text" />
         </Typo>
+        <img
+          className="xl-lg:absolute xl-lg:w-[35%] w-full right-0 h-auto object-right relative"
+          src={tools.image}
+          alt="Quem Somos"
+        />
         <div className="flex gap-[30px]">
           <Button onClick={() => push(tools.redirect)}>Saiba Mais</Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>
-        <img
-          className="absolute right-0 w-[35%] h-auto object-scale-down object-right xl:block lg:block hidden"
-          src={tools.image}
-          alt="Quem Somos"
-        />
       </div>
     </ContentLayout>
   );

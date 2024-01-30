@@ -20,7 +20,7 @@ export default function Blocks() {
   return (
     <div className="w-full">
       <div className="content">
-        <div className="flex gap-[30px] columns-4 w-full min-h-[60vh] xl:flex-row lg:flex-row flex-col">
+        <div className="flex gap-[30px] columns-4 w-full min-h-[60vh] xl-lg:flex-row flex-col">
           <div className="flex-1 gap-[30px] flex flex-col">
             <Block className="bg-neutral-200 h-44 center">
               <Image

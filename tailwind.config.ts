@@ -4,6 +4,9 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      screens: {
+        "xl-lg": [{ min: "1024px" }, { min: "1280px" }],
+      },
       fontFamily: {
         roboto: ["var(--font-roboto)"],
         adam: ["var(--font-adam)"],
