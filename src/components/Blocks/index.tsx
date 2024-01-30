@@ -4,9 +4,7 @@ import Image from "next/image";
 import React, { useMemo, useRef } from "react";
 import { Info, Typo } from "../Typo";
 import { BsArrowRightCircle } from "react-icons/bs";
-import TouchRipple, {
-  TouchRippleProps,
-} from "@material-ui/core/ButtonBase/TouchRipple";
+import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import Link from "next/link";
 import {
   academia,
@@ -22,8 +20,8 @@ export default function Blocks() {
   return (
     <div className="w-full">
       <div className="content">
-        <div className="flex gap-8 columns-4 w-full min-h-[60vh] xl:flex-row lg:flex-row flex-col">
-          <div className="flex-1 gap-8 flex flex-col">
+        <div className="flex gap-[30px] columns-4 w-full min-h-[60vh] xl:flex-row lg:flex-row flex-col">
+          <div className="flex-1 gap-[30px] flex flex-col">
             <Block className="bg-neutral-200 h-44 center">
               <Image
                 src="/alarc/logo-gray.svg"
@@ -47,7 +45,7 @@ export default function Blocks() {
             </Block>
           </div>
 
-          <div className="flex-1 gap-8 flex flex-col">
+          <div className="flex-1 gap-[30px] flex flex-col">
             <Block
               className="bg-primary flex-1 text-white"
               href={quemSomos.href}
@@ -72,7 +70,7 @@ export default function Blocks() {
             </Block>
           </div>
 
-          <div className="flex-1 gap-8 flex flex-col">
+          <div className="flex-1 gap-[30px] flex flex-col">
             <Block
               className="bg-neutral-200 flex-1 text-black"
               href={nossosClientes.href}
@@ -97,7 +95,7 @@ export default function Blocks() {
             </Block>
           </div>
 
-          <div className="flex-1 gap-8 flex flex-col">
+          <div className="flex-1 gap-[30px] flex flex-col">
             <Block
               className="bg-primary text-white h-44"
               href={noticias.href}
@@ -147,12 +145,12 @@ export function Block({
 }) {
   const rippleRef = useRef<any>(null);
 
-  const onRippleStart = (e) => {
+  const onRippleStart = (e: any) => {
     if (!rippleRef.current) return;
     rippleRef.current.start(e);
   };
 
-  const onRippleStop = (e) => {
+  const onRippleStop = (e: any) => {
     if (!rippleRef.current) return;
     rippleRef.current.stop(e);
   };
