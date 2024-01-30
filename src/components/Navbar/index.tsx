@@ -19,8 +19,8 @@ export default function Navbar() {
             className="unselectable undraggable"
           />
         </Link>
-        <div className="gap-9 xl:flex md:flex hidden">
-          <div className="justify-end items-center gap-8 inline-flex">
+        <div className="gap-[30px] xl:flex md:flex hidden">
+          <div className="justify-end items-center gap-[30px] inline-flex">
             {pages.map((page) => (
               <Link key={page.href} href={page.href}>
                 <Typo typo="nav">{page.title}</Typo>

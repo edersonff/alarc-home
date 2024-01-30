@@ -16,12 +16,12 @@ export default function HeroTools() {
         <Typo typo="paragraph" className="lg:w-2/3 xl:w-2/3">
           <Info info="tools" text="text" />
         </Typo>
-        <div className="flex gap-7">
+        <div className="flex gap-[30px]">
           <Button onClick={() => push(tools.redirect)}>Saiba Mais</Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>
         <img
-          className="absolute right-0 w-[35%] h-[60vh] object-scale-down object-right xl:block lg:block hidden"
+          className="absolute right-0 w-[35%] h-auto object-scale-down object-right xl:block lg:block hidden"
           src={tools.image}
           alt="Quem Somos"
         />

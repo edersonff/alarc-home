@@ -37,7 +37,7 @@ export default function CanaisAtuacao() {
         </Typo>
 
         <img
-          className="absolute right-0 w-[35%] h-[60vh] object-right xl:block lg:block hidden"
+          className="absolute right-0 w-[35%] h-auto object-right xl:block lg:block hidden"
           src={canaisAtuacao.image}
           alt="Quem Somos"
         />
@@ -50,7 +50,7 @@ export default function CanaisAtuacao() {
           <Partner title="Outros canais" images={others} />
         </div>
 
-        <div className="flex gap-7">
+        <div className="flex gap-[30px]">
           <Button href={canaisAtuacao.redirect}>Saiba Mais</Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>

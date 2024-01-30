@@ -23,7 +23,7 @@ export default function NossosClientes() {
           </h2>
           <Testimonials />
         </div>
-        <div className="center w-full gap-7 mt-16">
+        <div className="center w-full gap-[30px] mt-16">
           <Button onClick={() => push(nossosClientes.redirect)}>
             Saiba Mais
           </Button>
