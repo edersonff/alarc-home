@@ -49,3 +49,15 @@ hr{
 .swiper-button-prev::after, .swiper-button-next::after{
   @apply text-white font-bold text-xl;
 }
+
+.swiper-slide{
+  @apply opacity-50 transition-all duration-300;
+}
+
+.swiper-slide-next{
+  @apply opacity-100 transform scale-150;
+}
+
+.swiper{
+  @apply overflow-y-visible !important;
+}
