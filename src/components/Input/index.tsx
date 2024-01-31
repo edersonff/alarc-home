@@ -20,7 +20,7 @@ export default function Input({
         {...props}
         ref={innerRef}
         className={
-          "py-[13.5px] px-4 block w-full border-2 border-gray-400 rounded-lg text-sm focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none " +
+          "py-[13.5px] px-4 block w-full border-2 border-gray-300 rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:border-primary " +
           className
         }
       />
