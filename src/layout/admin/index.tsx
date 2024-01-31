@@ -4,19 +4,23 @@ import Header from "@/components/Admin/Header";
 import Navbar from "@/components/Admin/Navbar";
 import { useAuthStore } from "@/store/auth";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const route = useRouter();
+  const { push } = useRouter();
   const { isLogged } = useAuthStore();
 
-  if (!isLogged) {
-    route.push("/admin");
+  useEffect(() => {
+    if (!isLogged) {
+      push("/admin");
+    }
+  }, [isLogged, push]);
 
+  if (!isLogged) {
     return <></>;
   }
 

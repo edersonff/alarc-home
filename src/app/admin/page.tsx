@@ -7,7 +7,7 @@ import { authService } from "@/services/auth";
 import { useAuthStore } from "@/store/auth";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function Admin() {
   const usernameRef = useRef<HTMLInputElement>(null);
@@ -37,9 +37,13 @@ export default function Admin() {
     }
   }
 
-  if (isLogged) {
-    push("/admin/dashboard");
+  useEffect(() => {
+    if (isLogged) {
+      push("/admin/dashboard");
+    }
+  }, [isLogged, push]);
 
+  if (isLogged) {
     return <></>;
   }
 
