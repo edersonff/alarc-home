@@ -44,7 +44,7 @@ export default function Admin() {
   }
 
   return (
-    <div className="flex h-[100vh] w-full ">
+    <div className="flex min-h-[100vh] w-full ">
       <div className="flex-1">
         <div className="center h-full">
           <form
