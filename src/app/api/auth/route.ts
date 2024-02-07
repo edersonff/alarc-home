@@ -1,5 +1,5 @@
-import { sign } from "@/utils/jwt";
 import admins from "@/info/admin/admin.json";
+import { sign } from "@/utils/jwt";
 
 export async function POST(req: Request) {
   const { user, password } = await req.json();
