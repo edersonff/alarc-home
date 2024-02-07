@@ -1,7 +1,10 @@
+"use client";
+
 import ImageLoading from "@/components/Image";
 import Navbar from "@/components/Navbar";
 import { Info, Typo } from "@/components/Typo";
-import { infoData } from "@/info";
+import { useInfoStore } from "@/store/info";
+import { infoData as data } from "@/utils/api/info";
 import React from "react";
 
 export default function ContentLayout({
@@ -9,9 +12,10 @@ export default function ContentLayout({
   info,
 }: {
   children: React.ReactNode;
-  info: keyof typeof infoData;
+  info: keyof typeof data;
 }) {
-  const data = infoData[info] as any;
+  const infoData = useInfoStore();
+
   return (
     <div className="flex flex-col">
       <Navbar />
@@ -22,7 +26,7 @@ export default function ContentLayout({
           </Typo>
         </div>
         <ImageLoading
-          src={data.background}
+          src={infoData[info].background}
           alt="Banner"
           layout="fill"
           objectFit="cover"

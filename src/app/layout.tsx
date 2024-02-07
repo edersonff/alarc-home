@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
+import AppLayout from "@/layout/app";
 
-export const roboto = Roboto({
+const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   variable: "--font-roboto",
 });
 
-export const adam = localFont({
+const adam = localFont({
   variable: "--font-adam",
   src: [
     {
@@ -42,7 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${adam.variable}`}>{children}</body>
+      <body className={`${roboto.variable} ${adam.variable}`}>
+        <AppLayout>{children}</AppLayout>
+      </body>
     </html>
   );
 }

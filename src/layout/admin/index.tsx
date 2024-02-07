@@ -6,6 +6,8 @@ import { useAuthStore } from "@/store/auth";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
+import "react-quill/dist/quill.snow.css";
+
 export default function AdminLayout({
   children,
 }: {
@@ -26,11 +28,11 @@ export default function AdminLayout({
 
   return (
     <div className="w-full h-[100vh]">
-      <div className="pt-7 flex w-full h-full">
+      <div className="flex w-full h-full">
         <Navbar />
-        <div className="w-full h-full flex flex-col">
+        <div className="w-full h-full flex flex-col pt-7 overflow-y-scroll">
           <Header />
-          <div className="bg-green-600/5 h-full p-[30px] rounded-tl-[25px]">
+          <div className="bg-green-600/5 xl-lg:p-[30px] rounded-tl-[25px]">
             {children}
           </div>
         </div>
