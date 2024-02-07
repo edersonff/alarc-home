@@ -22,7 +22,10 @@ export default function Header() {
       >
         {greeting}!
       </Typo>
-      <Link href="/" className="bg-primary text-white p-2 rounded-full">
+      <Link
+        href="/"
+        className="bg-primary text-white p-2 rounded-full hover:opacity-80 focus:opacity-100 transition-all delay-100"
+      >
         <FaArrowRight size={20} />
       </Link>
     </div>

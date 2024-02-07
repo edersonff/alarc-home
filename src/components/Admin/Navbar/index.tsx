@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -10,13 +12,14 @@ export default function Navbar() {
   const path = usePathname();
 
   return (
-    <div className="px-8 min-w-[240px] h-full flex flex-col">
+    <div className="xl-lg:px-8 px-4 pt-7 xl-lg:min-w-[240px] h-full flex flex-col">
       <div className="mb-8">
         <Image
           src="/alarc/logo-without-text.svg"
           alt="Alarc"
           width={50}
           height={50}
+          loading="eager"
         />
       </div>
       <div className="flex flex-col h-full justify-between mb-8">
@@ -26,7 +29,7 @@ export default function Navbar() {
               <>
                 {index === 2 && <hr className="my-2 opacity-40" />}
                 <Nav
-                  key={index}
+                  key={index + " " + item.label}
                   className={"bg-black"}
                   icon={item.icon}
                   label={item.label}
@@ -68,11 +71,11 @@ function Nav({
       href={path}
       className={
         "flex items-center gap-4 py-3 px-4 rounded-lg cursor-pointer " +
-        (selected ? className + " text-white" : "hover:bg-gray-100")
+        (selected ? "text-white " + className : "hover:bg-gray-100")
       }
     >
       <Icon size={20} />
-      <span>{label}</span>
+      <span className="xl-lg:inline-block hidden">{label}</span>
     </Link>
   );
 }

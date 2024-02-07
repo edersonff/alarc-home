@@ -26,7 +26,7 @@ export const AdminNavbarItems = [
   },
   {
     label: "Avaliações",
-    path: "/admin/ratings",
+    path: "/admin/reviews",
     icon: FaStar,
   },
 ];
