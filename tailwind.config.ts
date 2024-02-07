@@ -4,6 +4,14 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      gap: {
+        main: "30px",
+      },
+      flex: {
+        2: "2 2 0%",
+        3: "3 3 0%",
+        "50%": "0 0 50%",
+      },
       screens: {
         "xl-lg": [{ min: "1024px" }, { min: "1280px" }],
       },
