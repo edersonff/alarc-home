@@ -5,13 +5,21 @@ import Navbar from "@/components/Navbar";
 import { Typo } from "@/components/Typo";
 import Image from "@/components/Image";
 import Link from "next/link";
-import React, { useMemo } from "react";
-import { posts } from "@/info";
+import React, { useEffect, useMemo } from "react";
+import { useInfoStore } from "@/store/info";
 
 export default function Blog({ params }: { params: { name: string } }) {
+  const posts = useInfoStore((state) => state.posts);
+
   const post = useMemo(() => {
     return posts.find((post) => post.slug === params.name) as PostType;
-  }, [params.name]);
+  }, [params.name, posts]);
+
+  useEffect(() => {
+    if (!post) {
+      window.location.href = "/noticias";
+    }
+  }, [post]);
 
   return (
     <div className="flex flex-col gap-12 mb-24">
@@ -38,7 +46,7 @@ export default function Blog({ params }: { params: { name: string } }) {
               className="object-center"
             />
           </div>
-          <div className="w-full flex xl-lg:flex-row flex-col-reverse xl-lg:gap-[30px] gap-14">
+          <div className="w-full flex xl-lg:flex-row flex-col-reverse xl-lg:gap-main gap-14">
             <div className="xl-lg:w-1/4">
               <p className="text-[15px] font-bold tracking-wide mb-[18px]">
                 Compartilhar Artigo

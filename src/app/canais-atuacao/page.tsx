@@ -4,8 +4,8 @@ import Button from "@/components/Button";
 import OutlinedButton from "@/components/Button/Outlined";
 import Partner from "@/components/Partner";
 import { Info, Typo } from "@/components/Typo";
-import { canaisAtuacao } from "@/info";
 import ContentLayout from "@/layout/content";
+import { useInfoStore } from "@/store/info";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -28,6 +28,7 @@ const others = [
 ];
 
 export default function CanaisAtuacao() {
+  const canaisAtuacao = useInfoStore((state) => state.canaisAtuacao);
   const { push } = useRouter();
   return (
     <ContentLayout info="canaisAtuacao">
@@ -39,7 +40,7 @@ export default function CanaisAtuacao() {
         <img
           className="xl-lg:absolute xl-lg:w-[35%] w-full right-0 h-auto object-right relative"
           src={canaisAtuacao.image}
-          alt="Quem Somos"
+          alt="Canais de Atuação"
         />
 
         <hr />
@@ -50,7 +51,7 @@ export default function CanaisAtuacao() {
           <Partner title="Outros canais" images={others} />
         </div>
 
-        <div className="flex gap-[30px]">
+        <div className="flex gap-main">
           <Button href={canaisAtuacao.redirect}>Saiba Mais</Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>

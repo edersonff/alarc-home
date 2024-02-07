@@ -1,13 +1,16 @@
-import { pages } from "@/info";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import GhostButton from "../Button/Ghost";
 import { Typo } from "../Typo";
+import { useInfoStore } from "@/store/info";
 
-export default function Navbar() {
+export default function Navbar({ absolute }: { absolute?: boolean }) {
+  const pages = useInfoStore((state) => state.pages);
   return (
-    <div className="w-full">
+    <div className={"w-full z-50 " + (absolute ? "absolute" : "relative")}>
       <div className="content flex justify-between items-center w-full mt-16">
         <Link href="/">
           <Image
@@ -19,9 +22,9 @@ export default function Navbar() {
             className="unselectable undraggable"
           />
         </Link>
-        <div className="gap-[30px] xl-lg:flex hidden">
-          <div className="justify-end items-center gap-[30px] inline-flex">
-            {pages.map((page) => (
+        <div className="gap-main xl-lg:flex hidden">
+          <div className="justify-end items-center gap-main inline-flex">
+            {pages?.map((page: any) => (
               <Link key={page.href} href={page.href}>
                 <Typo typo="nav">{page.title}</Typo>
               </Link>

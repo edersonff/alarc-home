@@ -6,22 +6,33 @@ import { Info, Typo } from "../Typo";
 import { BsArrowRightCircle } from "react-icons/bs";
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import Link from "next/link";
-import {
-  academia,
-  canaisAtuacao,
-  nossosClientes,
-  noticias,
-  quemSomos,
-  tools,
-} from "@/info";
 import { FaCirclePlus } from "react-icons/fa6";
+import { useInfoStore } from "@/store/info";
 
 export default function Blocks() {
+  const {
+    academia,
+    canaisAtuacao,
+    nossosClientes,
+    noticias,
+    quemSomos,
+    tools,
+    contato,
+  } = useInfoStore((state) => ({
+    academia: state.academia,
+    canaisAtuacao: state.canaisAtuacao,
+    nossosClientes: state.nossosClientes,
+    noticias: state.noticias,
+    quemSomos: state.quemSomos,
+    tools: state.tools,
+    contato: state.contato,
+  }));
+
   return (
     <div className="w-full">
       <div className="content">
-        <div className="flex gap-[30px] columns-4 w-full min-h-[60vh] xl-lg:flex-row flex-col">
-          <div className="flex-1 gap-[30px] flex flex-col">
+        <div className="flex gap-main columns-4 w-full min-h-[60vh] xl-lg:flex-row flex-col">
+          <div className="flex-1 gap-main flex flex-col">
             <Block className="bg-neutral-200 h-44 center">
               <Image
                 src="/alarc/logo-gray.svg"
@@ -45,7 +56,7 @@ export default function Blocks() {
             </Block>
           </div>
 
-          <div className="flex-1 gap-[30px] flex flex-col">
+          <div className="flex-1 gap-main flex flex-col">
             <Block
               className="bg-primary flex-1 text-white"
               href={quemSomos.href}
@@ -70,7 +81,7 @@ export default function Blocks() {
             </Block>
           </div>
 
-          <div className="flex-1 gap-[30px] flex flex-col">
+          <div className="flex-1 gap-main flex flex-col">
             <Block
               className="bg-neutral-200 flex-1 text-black"
               href={nossosClientes.href}
@@ -95,7 +106,7 @@ export default function Blocks() {
             </Block>
           </div>
 
-          <div className="flex-1 gap-[30px] flex flex-col">
+          <div className="flex-1 gap-main flex flex-col">
             <Block
               className="bg-primary text-white h-44"
               href={noticias.href}
@@ -107,7 +118,7 @@ export default function Blocks() {
                 </Typo>
               </div>
             </Block>
-            <Block className="bg-black flex-1 text-white">
+            <Block href={contato.href} className="bg-black flex-1 text-white">
               <div className="w-full">
                 <Typo typo="block" className="mb-3">
                   <Info info="contato" text="label" />

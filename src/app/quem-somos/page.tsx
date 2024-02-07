@@ -3,12 +3,13 @@
 import Button from "@/components/Button";
 import OutlinedButton from "@/components/Button/Outlined";
 import { Info, Typo } from "@/components/Typo";
-import { quemSomos } from "@/info";
 import ContentLayout from "@/layout/content";
+import { useInfoStore } from "@/store/info";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function QuemSomos() {
+  const quemSomos = useInfoStore((state) => state.quemSomos);
   const { push } = useRouter();
   return (
     <ContentLayout info="quemSomos">
@@ -21,7 +22,7 @@ export default function QuemSomos() {
           src={quemSomos.image}
           alt="Quem Somos"
         />
-        <div className="flex gap-[30px]">
+        <div className="flex gap-main">
           <Button onClick={() => push(quemSomos.redirect)}>Saiba Mais</Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>
