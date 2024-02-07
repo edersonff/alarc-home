@@ -1,3 +1,5 @@
+"use client";
+
 import NaviveImage, { ImageProps } from "next/image";
 import React, { useMemo, useState } from "react";
 import Skeleton from "../Skeleton";
