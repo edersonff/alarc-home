@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  @apply tracking-wider
+}
+
 body{
   font-family: var(--font-roboto);
 }
@@ -52,14 +56,19 @@ hr{
 
 .swiper-slide{
   @apply opacity-50 transition-all duration-300;
+  @apply flex justify-center !important;
 }
 
 .swiper-slide-next{
-  @apply opacity-100 transform scale-150;
+  @apply opacity-100 overflow-visible z-50 !important;
+}
+
+.swiper-slide-next div{
+  @apply transform scale-[115%] transition-all duration-300;
 }
 
 .swiper{
-  @apply overflow-y-visible !important;
+  overflow: visible !important;
 }
 
 input:-webkit-autofill,
@@ -71,6 +80,37 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 30px rgb(91 203 85/0.1) inset;
-  box-shadow: 0 0 0 30px rgb(91 203 85/0.1) inset;
+  -webkit-box-shadow: 0 0 0 30px rgb(91 203 85/0.05) inset;
+  box-shadow: 0 0 0 30px rgb(91 203 85/0.05) inset;
+  border-color: #5BCB55;
+}
+
+.invalid {
+  @apply border-red-500;
+  animation: error 0.3s ease-in-out;
+}
+
+
+[contenteditable]:focus {
+  @apply outline-none bg-primary/10
+}
+
+/* Animations */
+
+@keyframes error {
+  0% {
+    transform: translateX(-2px);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
