@@ -1,17 +1,17 @@
 import { PostType } from "@/@types/Post";
 import { ReviewType } from "@/@types/Review";
-import {
-  academia,
-  canaisAtuacao,
-  contato,
-  nossosClientes,
-  noticias,
-  pages,
-  posts,
-  quemSomos,
-  reviews,
-  tools,
-} from "@/utils/api/info";
+
+import academia from "@/info/pages/academia.json";
+import canaisAtuacao from "@/info/pages/canais-atuacao.json";
+import contato from "@/info/pages/contato.json";
+import nossosClientes from "@/info/pages/nossos-clientes.json";
+import noticias from "@/info/pages/noticias.json";
+import pages from "@/info/pages/pages.json";
+import quemSomos from "@/info/pages/quem-somos.json";
+import tools from "@/info/pages/tools.json";
+import posts from "@/info/posts/posts.json";
+import reviews from "@/info/reviews/reviews.json";
+
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 

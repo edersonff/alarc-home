@@ -1,4 +1,5 @@
-import { reviews } from "@/utils/api/info";
+import { ReviewType } from "@/@types/Review";
+import { infoData } from "@/utils/api/info";
 import fs from "fs";
 
 type Params = {
@@ -6,8 +7,8 @@ type Params = {
     id: number;
   };
 };
-
 export async function DELETE(_req: Request, { params: { id: idStr } }: Params) {
+  const reviews: ReviewType[] = infoData("reviews");
   const id = Number(idStr);
 
   const reviewsFind = reviews.filter((_review, i) => i !== id);
@@ -34,6 +35,7 @@ export async function DELETE(_req: Request, { params: { id: idStr } }: Params) {
 }
 
 export async function PUT(req: Request, { params: { id: idStr } }: Params) {
+  const reviews: ReviewType[] = infoData("reviews");
   const id = Number(idStr);
 
   const formData = await req.formData();

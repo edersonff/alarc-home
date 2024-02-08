@@ -1,12 +1,14 @@
-import { imageBlogPath, posts } from "@/utils/api/info";
+import { PostType } from "@/@types/Post";
+import { imageBlogPath, infoData } from "@/utils/api/info";
 import fs from "fs";
 
 export async function POST(req: Request) {
+  const posts = infoData("posts");
   const formData = await req.formData();
 
   const { title, slug, date, tags, text, owner } = Object.fromEntries(formData);
 
-  const repeatedSlug = posts.find((post) => post.slug === slug);
+  const repeatedSlug = posts.find((post: PostType) => post.slug === slug);
 
   if (repeatedSlug) {
     return Response.json(

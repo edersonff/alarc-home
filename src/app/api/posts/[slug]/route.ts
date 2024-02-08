@@ -1,4 +1,5 @@
-import { posts } from "@/utils/api/info";
+import { PostType } from "@/@types/Post";
+import { infoData } from "@/utils/api/info";
 import fs from "fs";
 
 type Params = {
@@ -8,6 +9,7 @@ type Params = {
 };
 
 export async function DELETE(_req: Request, { params: { slug } }: Params) {
+  const posts: PostType[] = infoData("posts");
   const postsFind = posts.filter((post) => post.slug !== slug);
   const post = posts.find((post) => post.slug === slug);
 
@@ -29,6 +31,7 @@ export async function DELETE(_req: Request, { params: { slug } }: Params) {
 }
 
 export async function PUT(req: Request, { params: { slug: oldSlug } }: Params) {
+  const posts: PostType[] = infoData("posts");
   const formData = await req.formData();
 
   const { title, date, tags, text, owner, slug } = Object.fromEntries(formData);

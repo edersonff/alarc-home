@@ -8,9 +8,10 @@ type Params = {
 };
 
 export async function PUT(req: Request, { params: { name } }: Params) {
+  const data: any = infoData();
   const { name: row, value } = await req.json();
 
-  const file = infoData[name] as any;
+  const file = data[name] as any;
 
   if (!file) {
     return Response.json(

@@ -1,28 +1,71 @@
-import academiaInfo from "@/info/pages/academia.json";
-import canaisAtuacaoInfo from "@/info/pages/canais-atuacao.json";
-import contatoInfo from "@/info/pages/contato.json";
-import nossosClientesInfo from "@/info/pages/nossos-clientes.json";
-import noticiasInfo from "@/info/pages/noticias.json";
-import pagesInfo from "@/info/pages/pages.json";
-import quemSomosInfo from "@/info/pages/quem-somos.json";
-import toolsInfo from "@/info/pages/tools.json";
-import postsInfo from "@/info/posts/posts.json";
-import reviewsInfo from "@/info/reviews/reviews.json";
+import { PostType } from "@/@types/Post";
+import { ReviewType } from "@/@types/Review";
+import { readFileSync } from "fs";
+import { readFile } from "fs/promises";
+import path from "path";
 
-export const infoData = {
-  academia: academiaInfo,
-  canaisAtuacao: canaisAtuacaoInfo,
-  contato: contatoInfo,
-  nossosClientes: nossosClientesInfo,
-  noticias: noticiasInfo,
-  pages: pagesInfo,
-  quemSomos: quemSomosInfo,
-  tools: toolsInfo,
-  posts: postsInfo,
-  reviews: reviewsInfo,
-};
+function getFileContent(filePath: string) {
+  return () => {
+    const file = readFileSync(path.join(process.cwd(), filePath), "utf-8");
+    return JSON.parse(file);
+  };
+}
 
 export const basePath = "/src/info";
+
+export const infoData = (info?: keyof typeof infoPath) => {
+  const academiaInfo = getFileContent(basePath + "/pages/academia.json");
+  const canaisAtuacaoInfo = getFileContent(
+    basePath + "/pages/canais-atuacao.json"
+  );
+  const contatoInfo = getFileContent(basePath + "/pages/contato.json");
+  const nossosClientesInfo = getFileContent(
+    basePath + "/pages/nossos-clientes.json"
+  );
+  const noticiasInfo = getFileContent(basePath + "/pages/noticias.json");
+  const pagesInfo = getFileContent(basePath + "/pages/pages.json");
+  const quemSomosInfo = getFileContent(basePath + "/pages/quem-somos.json");
+  const toolsInfo = getFileContent(basePath + "/pages/tools.json");
+  const postsInfo = getFileContent(basePath + "/posts/posts.json");
+  const reviewsInfo = getFileContent(basePath + "/reviews/reviews.json");
+
+  switch (info) {
+    case "academia":
+      return academiaInfo();
+    case "canaisAtuacao":
+      return canaisAtuacaoInfo();
+    case "contato":
+      return contatoInfo();
+    case "nossosClientes":
+      return nossosClientesInfo();
+    case "noticias":
+      return noticiasInfo();
+    case "pages":
+      return pagesInfo();
+    case "quemSomos":
+      return quemSomosInfo();
+    case "tools":
+      return toolsInfo();
+    case "posts":
+      return postsInfo() as PostType[];
+    case "reviews":
+      return reviewsInfo() as ReviewType[];
+  }
+
+  return {
+    academia: academiaInfo(),
+    canaisAtuacao: canaisAtuacaoInfo(),
+    contato: contatoInfo(),
+    nossosClientes: nossosClientesInfo(),
+    noticias: noticiasInfo(),
+    pages: pagesInfo(),
+    quemSomos: quemSomosInfo(),
+    tools: toolsInfo(),
+    posts: postsInfo(),
+    reviews: reviewsInfo(),
+  };
+};
+
 export const imageBlogPath = "public/images/blog/";
 export const imageReviewPath = "public/images/review/";
 
@@ -39,13 +82,4 @@ export const infoPath = {
   reviews: "/reviews/reviews.json",
 };
 
-export const academia = academiaInfo;
-export const canaisAtuacao = canaisAtuacaoInfo;
-export const contato = contatoInfo;
-export const nossosClientes = nossosClientesInfo;
-export const noticias = noticiasInfo;
-export const pages = pagesInfo;
-export const quemSomos = quemSomosInfo;
-export const tools = toolsInfo;
-export const posts = postsInfo;
-export const reviews = reviewsInfo;
+export type InfoKeys = keyof typeof infoPath;
