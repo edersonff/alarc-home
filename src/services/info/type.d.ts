@@ -1,7 +1,7 @@
-import { infoData } from "@/utils/api/info";
+import { InfoKeys } from "@/utils/api/info";
 
 export type InfoGet = {
-  [K in keyof typeof infoData]: typeof infoData;
+  [K in InfoKeys]: string;
 };
 
 export type InfoUpdateBody = {

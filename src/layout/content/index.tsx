@@ -4,7 +4,7 @@ import ImageLoading from "@/components/Image";
 import Navbar from "@/components/Navbar";
 import { Info, Typo } from "@/components/Typo";
 import { useInfoStore } from "@/store/info";
-import { infoData as data } from "@/utils/api/info";
+import { InfoKeys } from "@/utils/api/info";
 import React from "react";
 
 export default function ContentLayout({
@@ -12,7 +12,7 @@ export default function ContentLayout({
   info,
 }: {
   children: React.ReactNode;
-  info: keyof typeof data;
+  info: InfoKeys;
 }) {
   const infoData = useInfoStore();
 
@@ -26,7 +26,7 @@ export default function ContentLayout({
           </Typo>
         </div>
         <ImageLoading
-          src={infoData[info].background}
+          src={(infoData[info] as any).background}
           alt="Banner"
           layout="fill"
           objectFit="cover"

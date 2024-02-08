@@ -3,20 +3,14 @@
 import { infoService } from "@/services/info";
 import { useEditorStore } from "@/store/editor";
 import { useInfoStore } from "@/store/info";
-import { infoData } from "@/utils/api/info";
+import { InfoKeys } from "@/utils/api/info";
 import React, { useMemo, useRef } from "react";
 
 async function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export function Info({
-  text,
-  info,
-}: {
-  info: keyof typeof infoData;
-  text: string;
-}) {
+export function Info({ text, info }: { info: InfoKeys; text: string }) {
   const data = useInfoStore();
   const savedRef = useRef<HTMLDivElement>(null);
   const { isEditing } = useEditorStore();
