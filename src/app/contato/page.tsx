@@ -18,7 +18,7 @@ export default function Contato() {
   return (
     <div className="flex flex-col relative">
       <Navbar absolute />
-      <div className="relative w-full bg-[#EEE] flex flex-col justify-end mb-32">
+      <div className="relative w-full bg-[#EEE] flex flex-col justify-end">
         <div className="h-[123px] w-full"></div>
         <div className="content w-full relative z-50">
           <div className="w-full flex py-36">
@@ -66,7 +66,7 @@ export default function Contato() {
           loading="eager"
         />
       </div>
-      <div className="w-full mb-[250px]">
+      <div className="w-full my-[230px]">
         <div className="content w-full flex flex-col gap-48">
           <CTA
             title="Venha nos conhecer"
@@ -113,7 +113,7 @@ export default function Contato() {
           </CTA>
         </div>
       </div>
-      <div className="min-h-[621px] w-full relative">
+      <div className="min-h-[621px] w-full relative" id="forms">
         <Image
           src="/images/background/forms.jpg"
           alt="Contato forms"

@@ -30,7 +30,9 @@ export default function Navbar({ absolute }: { absolute?: boolean }) {
               </Link>
             ))}
           </div>
-          <GhostButton>Entrar em Contato</GhostButton>
+          <GhostButton as={Link} href="/contato#forms">
+            Entrar em Contato
+          </GhostButton>
         </div>
       </div>
     </div>
