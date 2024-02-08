@@ -35,7 +35,7 @@ export default function Dashboard() {
               </div>
               <div>
                 <Button
-                  href="/admin/blog/create"
+                  href="/admin/posts/create"
                   className="text-[15px] py-[10px]"
                   target=""
                 >
@@ -63,7 +63,7 @@ export default function Dashboard() {
               </div>
               <div>
                 <Button
-                  href="/admin/blog/create"
+                  href="/admin/reviews/create"
                   className="text-[15px] py-[10px]"
                   target=""
                 >
