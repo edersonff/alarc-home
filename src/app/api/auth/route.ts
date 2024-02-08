@@ -13,7 +13,6 @@ export async function POST(req: Request) {
   for (let i = 0; i < admins.length; i++) {
     const admin = admins[i];
 
-    console.log(admin.user, user, admin.password, password);
     if (admin.user === user && admin.password === password) {
       const token = sign({ user, id: i + 1 });
       return Response.json({ token });
