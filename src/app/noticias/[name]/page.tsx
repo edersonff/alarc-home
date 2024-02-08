@@ -26,7 +26,7 @@ export default function Blog({ params }: { params: { name: string } }) {
       <Navbar />
       <div className="w-full center flex-col">
         <div className="px-10 py-2.5 bg-green-400 bg-opacity-20 rounded-full mb-6 text-green-400 text-[13px] font-semibold uppercase tracking-wide">
-          <span>E-commerce</span>
+          <span>{post.tags[0] || "E-commerce"}</span>
         </div>
         <div className="mb-12 text-center">
           <Typo typo="post" className="mb-3">
@@ -91,7 +91,10 @@ export default function Blog({ params }: { params: { name: string } }) {
               </div>
             </div>
             <div className="flex-1">
-              <Typo typo="paragraph">{post.text}</Typo>
+              <Typo
+                typo="paragraph"
+                dangerouslySetInnerHTML={{ __html: post.text }}
+              />
             </div>
           </div>
         </div>
