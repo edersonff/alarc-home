@@ -6,6 +6,30 @@
   @apply tracking-wider
 }
 
+h1{
+  @apply text-4xl font-bold;
+}
+
+h2{
+  @apply text-3xl font-bold;
+}
+
+h3{
+  @apply text-2xl font-bold;
+}
+
+h4{
+  @apply text-xl font-bold;
+}
+
+h5{
+  @apply text-lg font-bold;
+}
+
+html {
+  scroll-behavior: smooth!important;
+}
+
 body{
   font-family: var(--font-roboto);
 }
@@ -113,4 +137,17 @@ select:-webkit-autofill:focus {
   100% {
     transform: translateX(0);
   }
+}
+
+@keyframes AlertUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.alertUp{
+  animation: AlertUp 0.3s ease-in-out;
 }
