@@ -1,5 +1,11 @@
-import admins from "@/info/admin/admin.json";
 import { sign } from "@/utils/jwt";
+
+const admins = [
+  {
+    user: "admin-user",
+    password: "XowwHGRu2PG&",
+  },
+];
 
 export async function POST(req: Request) {
   const { user, password } = await req.json();
