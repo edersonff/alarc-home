@@ -28,7 +28,7 @@ export function Info({
     const target = e.target as HTMLDivElement;
     const value = target.innerHTML;
 
-    await sleep(500);
+    await sleep(2000);
 
     if (value !== target.innerHTML) return;
 
