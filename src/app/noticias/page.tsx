@@ -125,7 +125,7 @@ export function PostBanner({
   );
 }
 
-export function PostCard({ title, slug, text, date, image }: {} & PostType) {
+export function PostCard({ title, slug, text, date, image }: PostType) {
   return (
     <Link
       href={`/noticias/${slug}`}
@@ -149,9 +149,11 @@ export function PostCard({ title, slug, text, date, image }: {} & PostType) {
           {title}
         </Typo>
         <p className="mb-6 text-[15px] font-medium text-dark/30">{date}</p>
-        <Typo typo="paragraph" className="text-[18px]">
-          {text}
-        </Typo>
+        <Typo
+          dangerouslySetInnerHTML={{ __html: text }}
+          typo="paragraph"
+          className="text-[18px] line-clamp-3"
+        />
       </div>
     </Link>
   );
