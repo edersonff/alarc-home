@@ -13,7 +13,7 @@ export async function DELETE(_req: Request, { params: { slug } }: Params) {
 
   if (!post) {
     return Response.json({
-      message: "Post not found",
+      message: "Publicação não encontrada.",
     });
   }
 
@@ -28,17 +28,32 @@ export async function DELETE(_req: Request, { params: { slug } }: Params) {
   });
 }
 
-export async function PUT(req: Request, { params: { slug } }: Params) {
+export async function PUT(req: Request, { params: { slug: oldSlug } }: Params) {
   const formData = await req.formData();
 
-  const { title, date, tags, text, owner } = Object.fromEntries(formData);
+  const { title, date, tags, text, owner, slug } = Object.fromEntries(formData);
+
+  const repeatedSlug = posts.find(
+    (post) => post.slug === slug && slug !== oldSlug
+  );
+
+  if (repeatedSlug) {
+    return Response.json(
+      {
+        message: "O slug já está em uso.",
+      },
+      {
+        status: 400,
+      }
+    );
+  }
 
   const image = formData.get("image");
 
   let fileName: string | null;
 
   if (image) {
-    fileName = await saveImage(image as File, slug);
+    fileName = await saveImage(image as File, oldSlug);
   }
 
   const newPosts = posts.map((post) => {
@@ -46,7 +61,7 @@ export async function PUT(req: Request, { params: { slug } }: Params) {
       fs.unlinkSync(`public${post.image}`);
     }
 
-    if (post.slug === slug) {
+    if (post.slug === oldSlug) {
       return {
         title,
         slug,

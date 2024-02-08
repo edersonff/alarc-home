@@ -1,21 +1,36 @@
-import { reviews } from "@/utils/api/info";
+import { imageReviewPath, reviews } from "@/utils/api/info";
 import fs from "fs";
 
 export async function POST(req: Request) {
-  const { location, image, name, description, star } = await req.json();
+  const formData = await req.formData();
 
-  const newReviews = [
+  const { name, location, description, star } = Object.fromEntries(formData);
+  const length = reviews.length;
+
+  const id = length + 1;
+
+  const image = formData.get("image") as File;
+
+  const arrayBuffer = await image.arrayBuffer();
+
+  const buffer = Buffer.from(arrayBuffer);
+
+  const fileName = `${id}.${image.name.split(".").pop()}`;
+
+  fs.writeFileSync(`${imageReviewPath}${fileName}`, buffer);
+
+  const newPosts = [
     {
-      location,
-      image,
       name,
+      location,
       description,
-      star,
+      star: +star,
+      image: `/images/review/${fileName}`,
     },
     ...reviews,
   ];
 
-  fs.writeFileSync("src/info/reviews/reviews.json", JSON.stringify(newReviews));
+  fs.writeFileSync("src/info/reviews/reviews.json", JSON.stringify(newPosts));
 
   return Response.json({
     message: "Success",

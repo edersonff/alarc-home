@@ -15,7 +15,7 @@ export async function PUT(req: Request, { params: { name } }: Params) {
   if (!file) {
     return Response.json(
       {
-        message: "Invalid name",
+        message: "Nome inválido",
       },
       {
         status: 400,
