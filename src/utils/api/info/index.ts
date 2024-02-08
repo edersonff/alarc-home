@@ -23,7 +23,8 @@ export const infoData = {
 };
 
 export const basePath = "/src/info";
-export const imagePath = "public/images/blog/";
+export const imageBlogPath = "public/images/blog/";
+export const imageReviewPath = "public/images/review/";
 
 export const infoPath = {
   academia: "/pages/academia.json",
