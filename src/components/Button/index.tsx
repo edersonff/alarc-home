@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 export default function Button({
   className,
   href,
-  target,
+  target = "_blank",
   ...props
 }: JSX.IntrinsicElements["button"] & {
   href?: string;
@@ -15,7 +15,7 @@ export default function Button({
   return (
     <Tag
       href={href}
-      target={href ? "_blank" : target}
+      target={target}
       className={
         className +
         " py-4 px-8 min-w-44 center rounded-full font-medium text-xl bg-primary text-white hover:bg-opacity-85 transition-all active:bg-opacity-100 "
