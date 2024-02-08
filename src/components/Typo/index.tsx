@@ -100,7 +100,7 @@ export const typoStyles = {
 };
 
 type TypoProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   typo: keyof typeof typoStyles;
 } & JSX.IntrinsicElements["p"];
