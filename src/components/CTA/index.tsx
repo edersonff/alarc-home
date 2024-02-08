@@ -38,7 +38,13 @@ export default function CTA({
       <div className="flex-1">
         <p className="text-[20px] font-light mb-1">{subtitle}</p>
         <h2 className="text-[48px] font-bold mb-12">{title}</h2>
-        <Typo typo="paragraph" className="mb-16 text-opacity-80 font-light">
+        <Typo
+          typo="paragraph"
+          style={{
+            fontSize: "18px",
+          }}
+          className="mb-16 text-opacity-80 font-light"
+        >
           {children}
         </Typo>
         <Link
