@@ -36,7 +36,12 @@ export const metadata: Metadata = {
   title: "Alarc - Página Inicial",
   description:
     "A Alarc é uma empresa de serviços de e-commerce completa. Nossos clientes se ocupam com a operação física de compras e logística. Nós fazemos todo o resto, desde atendimento, chamados, anúncios, marketing, fotos, entre outros.",
+  alternates: {
+    canonical: "https://alarc.com.br",
+  },
   openGraph: {
+    url: "https://alarc.com.br",
+    type: "website",
     title: "Alarc - Página Inicial",
     description:
       "A Alarc é uma empresa de serviços de e-commerce completa. Nossos clientes se ocupam com a operação física de compras e logística. Nós fazemos todo o resto, desde atendimento, chamados, anúncios, marketing, fotos, entre outros.",

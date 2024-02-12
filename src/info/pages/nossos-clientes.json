@@ -1,9 +1,9 @@
 {
-    "title": "Nossos Clientes",
-    "label": "Nossos <span class='font-bold block'>CLIENTES</span>",
-    "background": "/images/banner/nossos-clientes.jpg",
-    "image": "/images/hero/nossos-clientes.png",
-    "text": "Nossos clientes são líderes de mercado em suas áreas de atuação. Trabalham de forma estratégica com o canal de e-commerce. Alguns de forma exclusiva online, e outros como um canal adicional de vendas. </br>Participamos e toda a montagem do plano de negócios e sua execução dentro do canal de e-commerce. Entendemos profundamente o negócio de nossos clientes, e frequentemente colaboramos em inovações de produtos e atuação no mercado.",
-    "href": "/nossos-clientes",
-    "redirect": "https://www.google.com.br"
+  "title": "Nossos Clientes",
+  "label": "Nossos <span class='font-bold block'>CLIENTES</span>",
+  "background": "/images/banner/nossos-clientes.jpg",
+  "image": "/images/hero/nossos-clientes.png",
+  "text": "Nossos clientes são líderes de mercado em suas áreas de atuação. Trabalham de forma estratégica com o canal de e-commerce. Alguns de forma exclusiva online, e outros como um canal adicional de vendas. </br>Participamos e toda a montagem do plano de negócios e sua execução dentro do canal de e-commerce. Entendemos profundamente o negócio de nossos clientes, e frequentemente colaboramos em inovações de produtos e atuação no mercado.",
+  "href": "/nossos-clientes",
+  "redirect": "/contato"
 }
