@@ -15,11 +15,21 @@ const getParter = (name: string) => `${basePath}/${name}.svg`;
 
 const partnerAgency = [
   getParter("amazon"),
-  getParter("magalu"),
   getParter("mercado-livre"),
+  getParter("magalu"),
 ];
 
-const asian = [getParter("shein"), getParter("shopee")];
+const asian = [
+  getParter("shein"),
+  getParter("shopee"),
+  getParter("aliexpress"),
+];
+
+const ownSite = [
+  getParter("nuvem-shop"),
+  getParter("tray"),
+  getParter("loja-integrada"),
+];
 
 const others = [
   getParter("americanas"),
@@ -46,8 +56,9 @@ export default function CanaisAtuacao() {
         <hr />
 
         <div className="flex flex-col xl-lg:gap-11 gap-20">
-          <Partner title="Agências parceiras" images={partnerAgency} />
+          <Partner title="Nossos Serviços" images={partnerAgency} />
           <Partner title="Asiáticos" images={asian} />
+          <Partner title="Site Próprio" images={ownSite} />
           <Partner title="Outros canais" images={others} />
         </div>
 
