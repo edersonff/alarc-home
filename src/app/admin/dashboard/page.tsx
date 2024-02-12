@@ -92,13 +92,13 @@ export default function Dashboard() {
                 label="Posts"
               />
               <Summary
-                color="#398533"
+                color="#55604e"
                 Icon={MdRateReview}
                 number={reviews.length}
                 label="Availiações"
               />
               <Summary
-                color="#5BCB55"
+                color="#92CC5C"
                 Icon={IoIosPaper}
                 number={12}
                 label="Posts"

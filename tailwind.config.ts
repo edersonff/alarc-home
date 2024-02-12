@@ -20,8 +20,8 @@ const config: Config = {
         adam: ["var(--font-adam)"],
       },
       colors: {
-        primary: "#5BCB55",
-        secondary: "#398533",
+        primary: "#92CC5C",
+        secondary: "#55604e",
         dark: "#183A16",
       },
       backgroundImage: {

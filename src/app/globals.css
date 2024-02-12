@@ -61,7 +61,7 @@ body{
   user-drag: none;
 }
 
-br {
+.br br {
   @apply block mb-10;
   content: ""; 
 }
