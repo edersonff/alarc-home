@@ -34,7 +34,21 @@ import "swiper/css/pagination";
 
 export const metadata: Metadata = {
   title: "Alarc - Página Inicial",
-  description: "A Alarc é uma empresa de serviços de e-commerce completa.",
+  description:
+    "A Alarc é uma empresa de serviços de e-commerce completa. Nossos clientes se ocupam com a operação física de compras e logística. Nós fazemos todo o resto, desde atendimento, chamados, anúncios, marketing, fotos, entre outros.",
+  openGraph: {
+    title: "Alarc - Página Inicial",
+    description:
+      "A Alarc é uma empresa de serviços de e-commerce completa. Nossos clientes se ocupam com a operação física de compras e logística. Nós fazemos todo o resto, desde atendimento, chamados, anúncios, marketing, fotos, entre outros.",
+    images: [
+      {
+        url: "https://alarc.com.br/images/og/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alarc - Página Inicial",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
