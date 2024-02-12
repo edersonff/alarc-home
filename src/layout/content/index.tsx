@@ -17,7 +17,7 @@ export default function ContentLayout({
   const infoData = useInfoStore();
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col br">
       <Navbar />
       <div className="w-full relative mt-14">
         <div className="content flex items-start relative z-10 py-16">
