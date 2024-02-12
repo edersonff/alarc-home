@@ -1,16 +1,18 @@
 "use client";
 
-import { PostType } from "@/@types/Post";
 import Navbar from "@/components/Navbar";
-import { Info, Typo } from "@/components/Typo";
+import { Typo } from "@/components/Typo";
 import Image from "@/components/Image";
-import Link from "next/link";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInfoStore } from "@/store/info";
 import GhostButton from "@/components/Button/Ghost";
 import Button from "@/components/Button";
 import CTA from "@/components/CTA";
 import OutlinedButton from "@/components/Button/Outlined";
+import { emailService } from "@/services/email";
+import { useErrorStore } from "@/store/error";
+import Lottie, { LottieRef } from "lottie-react";
+import emailAnim from "@/../public/static/lottie/email.json";
 
 export default function Contato() {
   const contato = useInfoStore((state) => state.contato);
@@ -138,67 +140,137 @@ export default function Contato() {
 }
 
 export function Forms() {
+  const { pushError } = useErrorStore();
+
+  const subjectRef = useRef<HTMLInputElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  const [loading, setLoading] = useState(false);
+
+  const resetButton = useRef<HTMLButtonElement>(null);
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const subject = subjectRef.current?.value;
+    const name = nameRef.current?.value;
+    const email = emailRef.current?.value;
+    const message = messageRef.current?.value;
+
+    if (subject && name && email && message) {
+      setLoading(true);
+
+      await emailService.send({
+        subject,
+        name,
+        email,
+        message,
+      });
+
+      setLoading(false);
+
+      pushError({
+        message: "Mensagem enviada com sucesso!",
+        status: 200,
+      });
+
+      resetButton.current?.click();
+    }
+  };
+
   return (
     <div className="flex gap-main content xl-lg:w-1/2 overflow-hidden xl-lg:rounded-[0px] absolute mx-auto z-50 bg-white shadow-xl">
-      <form className="flex-1 xl-lg:px-16 py-10 px-10">
-        <div className="mb-12">
-          <p className="text-[18px] font-light">
-            Envie-nos uma mensagem e nós iremos responder suas perguntas e
-            questões.
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-[5px] mb-12">
-          <div className="flex gap-main">
-            <div className="flex-1">
-              <Input required type="text" name="name" placeholder="Nome" />
-            </div>
-            <div className="flex-1">
-              <Input
-                required
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="mb-6"
+      <form onSubmit={sendEmail} className="flex-1 xl-lg:px-16 py-10 px-10">
+        {
+          // /public/static/lottie/email.json
+          loading ? (
+            <div className="w-full h-full center">
+              <Lottie
+                loop={false}
+                animationData={emailAnim}
+                style={{
+                  width: "200px",
+                  height: "200px",
+                }}
               />
             </div>
-          </div>
+          ) : (
+            <>
+              <div className="mb-12">
+                <p className="text-[18px] font-light">
+                  Envie-nos uma mensagem e nós iremos responder suas perguntas e
+                  questões.
+                </p>
+              </div>
 
-          <div>
-            <Input
-              type="text"
-              required
-              name="subject"
-              placeholder="Assunto"
-              className="mb-6"
-            />
-          </div>
+              <div className="flex flex-col gap-[5px] mb-12">
+                <div className="flex gap-main">
+                  <div className="flex-1">
+                    <Input
+                      innerRef={nameRef}
+                      required
+                      type="text"
+                      name="name"
+                      placeholder="Nome"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <Input
+                      innerRef={emailRef}
+                      required
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="mb-6"
+                    />
+                  </div>
+                </div>
 
-          <textarea
-            name="message"
-            required
-            placeholder="Mensagem"
-            className="w-full h-[200px] p-4 rounded-[10px] border-2 border-dark/20 focus:border-primary outline-none resize-none"
-          ></textarea>
-        </div>
-        <div className="flex xl-lg:gap-main gap-2 max-h-14">
-          <Button
-            style={{
-              fontSize: "18px",
-            }}
-            className="min-w-[267px]"
-          >
-            Enviar Mensagem
-          </Button>
-          <OutlinedButton
-            style={{
-              fontSize: "18px",
-            }}
-            className="min-w-[169px]"
-          >
-            Cancelar
-          </OutlinedButton>
-        </div>
+                <div>
+                  <Input
+                    innerRef={subjectRef}
+                    type="text"
+                    required
+                    name="subject"
+                    placeholder="Assunto"
+                    className="mb-6"
+                  />
+                </div>
+
+                <textarea
+                  ref={messageRef}
+                  name="message"
+                  required
+                  placeholder="Mensagem"
+                  className="w-full h-[200px] p-4 rounded-[10px] border-2 border-dark/20 focus:border-primary outline-none resize-none"
+                ></textarea>
+              </div>
+              <div className="flex xl-lg:gap-main gap-2 max-h-14">
+                <Button
+                  style={{
+                    fontSize: "18px",
+                  }}
+                  className="min-w-[267px]"
+                  type="submit"
+                >
+                  Enviar Mensagem
+                </Button>
+                <OutlinedButton
+                  innerRef={resetButton}
+                  style={{
+                    fontSize: "18px",
+                  }}
+                  className="min-w-[169px]"
+                  type="reset"
+                >
+                  Cancelar
+                </OutlinedButton>
+              </div>
+            </>
+          )
+        }
       </form>
     </div>
   );

@@ -1,7 +1,9 @@
 "use client";
 
+import Alert from "@/components/Alert";
 import { infoService } from "@/services/info";
 import { useEditorStore } from "@/store/editor";
+import { useErrorStore } from "@/store/error";
 import { InfoStore, useInfoStore } from "@/store/info";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,6 +12,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const path = usePathname();
+  const { errors } = useErrorStore();
   const setInfo = useInfoStore((state) => state.setInfo);
   const { isEditing } = useEditorStore();
 
@@ -42,6 +45,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       )}
+      <div className="fixed left-5 top-5 h-full z-[500] flex flex-col gap-2">
+        {errors.map((error, index) => (
+          <Alert key={index} {...error} />
+        ))}
+      </div>
       {children}
       {!path.includes("admin") && isEditing && (
         <>
