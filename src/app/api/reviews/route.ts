@@ -1,9 +1,14 @@
 import { imageReviewPath, infoData } from "@/utils/api/info";
+import { verifyToken } from "@/utils/jwt";
 import fs from "fs";
 
 export async function POST(req: Request) {
   const reviews = infoData("reviews");
   const formData = await req.formData();
+
+  if (!verifyToken(req)) {
+    return Response.json({ message: "Unauthorized" }, { status: 401 });
+  }
 
   const { name, location, description, star } = Object.fromEntries(formData);
   const length = reviews.length;

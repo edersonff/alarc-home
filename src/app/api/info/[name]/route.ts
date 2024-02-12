@@ -1,5 +1,6 @@
 import fs from "fs";
 import { basePath, infoData, infoPath } from "@/utils/api/info";
+import { verifyToken } from "@/utils/jwt";
 
 type Params = {
   params: {
@@ -10,6 +11,10 @@ type Params = {
 export async function PUT(req: Request, { params: { name } }: Params) {
   const data: any = infoData();
   const { name: row, value } = await req.json();
+
+  if (!verifyToken(req)) {
+    return Response.json({ message: "Unauthorized" }, { status: 401 });
+  }
 
   const file = data[name] as any;
 

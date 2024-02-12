@@ -1,5 +1,6 @@
 import { ReviewType } from "@/@types/Review";
 import { infoData } from "@/utils/api/info";
+import { verifyToken } from "@/utils/jwt";
 import fs from "fs";
 
 type Params = {
@@ -37,6 +38,10 @@ export async function DELETE(_req: Request, { params: { id: idStr } }: Params) {
 export async function PUT(req: Request, { params: { id: idStr } }: Params) {
   const reviews: ReviewType[] = infoData("reviews");
   const id = Number(idStr);
+
+  if (!verifyToken(req)) {
+    return Response.json({ message: "Unauthorized" }, { status: 401 });
+  }
 
   const formData = await req.formData();
 

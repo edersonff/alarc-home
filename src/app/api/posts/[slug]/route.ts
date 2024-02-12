@@ -1,5 +1,6 @@
 import { PostType } from "@/@types/Post";
 import { infoData } from "@/utils/api/info";
+import { verifyToken } from "@/utils/jwt";
 import fs from "fs";
 
 type Params = {
@@ -8,10 +9,14 @@ type Params = {
   };
 };
 
-export async function DELETE(_req: Request, { params: { slug } }: Params) {
+export async function DELETE(req: Request, { params: { slug } }: Params) {
   const posts: PostType[] = infoData("posts");
   const postsFind = posts.filter((post) => post.slug !== slug);
   const post = posts.find((post) => post.slug === slug);
+
+  if (!verifyToken(req)) {
+    return Response.json({ message: "Unauthorized" }, { status: 401 });
+  }
 
   if (!post) {
     return Response.json({
@@ -33,6 +38,10 @@ export async function DELETE(_req: Request, { params: { slug } }: Params) {
 export async function PUT(req: Request, { params: { slug: oldSlug } }: Params) {
   const posts: PostType[] = infoData("posts");
   const formData = await req.formData();
+
+  if (!verifyToken(req)) {
+    return Response.json({ message: "Unauthorized" }, { status: 401 });
+  }
 
   const { title, date, tags, text, owner, slug } = Object.fromEntries(formData);
 

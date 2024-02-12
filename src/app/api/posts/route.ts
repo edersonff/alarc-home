@@ -1,10 +1,15 @@
 import { PostType } from "@/@types/Post";
 import { imageBlogPath, infoData } from "@/utils/api/info";
+import { verifyToken } from "@/utils/jwt";
 import fs from "fs";
 
 export async function POST(req: Request) {
   const posts = infoData("posts");
   const formData = await req.formData();
+
+  if (!verifyToken(req)) {
+    return Response.json({ message: "Unauthorized" }, { status: 401 });
+  }
 
   const { title, slug, date, tags, text, owner } = Object.fromEntries(formData);
 
