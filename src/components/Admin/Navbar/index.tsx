@@ -42,7 +42,7 @@ export default function Navbar() {
         </div>
 
         <Nav
-          className={"bg-red-600/10 text-red-600"}
+          className={"bg-red-600 text-red-600"}
           icon={IoExit}
           label={"Sair"}
           path={"/admin/sair"}
