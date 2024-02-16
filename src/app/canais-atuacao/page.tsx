@@ -56,10 +56,10 @@ export default function CanaisAtuacao() {
         <hr />
 
         <div className="flex flex-col xl-lg:gap-11 gap-20">
-          <Partner title="Nossos Serviços" images={partnerAgency} />
-          <Partner title="Asiáticos" images={asian} />
+          <Partner title="Canais Certificados" images={partnerAgency} />
+          <Partner title="Marketplaces Asiátios" images={asian} />
           <Partner title="Site Próprio" images={ownSite} />
-          <Partner title="Outros canais" images={others} />
+          <Partner title="Demais Marketplaces" images={others} />
         </div>
 
         <div className="flex gap-main">
