@@ -5,6 +5,7 @@ import academia from "@/info/pages/academia.json";
 import canaisAtuacao from "@/info/pages/canais-atuacao.json";
 import contato from "@/info/pages/contato.json";
 import nossosClientes from "@/info/pages/nossos-clientes.json";
+import nossosServicos from "@/info/pages/nossos-servicos.json";
 import noticias from "@/info/pages/noticias.json";
 import pages from "@/info/pages/pages.json";
 import quemSomos from "@/info/pages/quem-somos.json";
@@ -20,6 +21,7 @@ export type InfoStore = {
   canaisAtuacao: any;
   contato: any;
   nossosClientes: any;
+  nossosServicos: any;
   noticias: any;
   pages: any;
   quemSomos: any;
@@ -35,6 +37,7 @@ const infoStore = persist<InfoStore>(
     canaisAtuacao,
     contato,
     nossosClientes,
+    nossosServicos,
     noticias,
     pages,
     quemSomos,

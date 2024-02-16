@@ -22,6 +22,9 @@ export const infoData = (info?: keyof typeof infoPath) => {
   const nossosClientesInfo = getFileContent(
     basePath + "/pages/nossos-clientes.json"
   );
+  const nossosServicosInfo = getFileContent(
+    basePath + "/pages/nossos-servicos.json"
+  );
   const noticiasInfo = getFileContent(basePath + "/pages/noticias.json");
   const pagesInfo = getFileContent(basePath + "/pages/pages.json");
   const quemSomosInfo = getFileContent(basePath + "/pages/quem-somos.json");
@@ -57,6 +60,7 @@ export const infoData = (info?: keyof typeof infoPath) => {
     canaisAtuacao: canaisAtuacaoInfo(),
     contato: contatoInfo(),
     nossosClientes: nossosClientesInfo(),
+    nossosServicos: nossosServicosInfo(),
     noticias: noticiasInfo(),
     pages: pagesInfo(),
     quemSomos: quemSomosInfo(),
@@ -74,6 +78,7 @@ export const infoPath = {
   canaisAtuacao: "/pages/canais-atuacao.json",
   contato: "/pages/contato.json",
   nossosClientes: "/pages/nossos-clientes.json",
+  nossosServicos: "/pages/nossos-servicos.json",
   noticias: "/pages/noticias.json",
   pages: "/pages/pages.json",
   quemSomos: "/pages/quem-somos.json",

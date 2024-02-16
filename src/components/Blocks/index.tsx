@@ -14,6 +14,7 @@ export default function Blocks() {
     academia,
     canaisAtuacao,
     nossosClientes,
+    nossosServicos,
     noticias,
     quemSomos,
     tools,
@@ -22,6 +23,7 @@ export default function Blocks() {
     academia: state.academia,
     canaisAtuacao: state.canaisAtuacao,
     nossosClientes: state.nossosClientes,
+    nossosServicos: state.nossosServicos,
     noticias: state.noticias,
     quemSomos: state.quemSomos,
     tools: state.tools,
@@ -33,14 +35,16 @@ export default function Blocks() {
       <div className="content">
         <div className="flex gap-main columns-4 w-full min-h-[60vh] xl-lg:flex-row flex-col">
           <div className="flex-1 gap-main flex flex-col">
-            <Block className="bg-neutral-200 h-44 center">
-              <Image
-                src="/alarc/logo-gray.svg"
-                alt="Logo"
-                width={200}
-                height={200}
-                className="unselectable undraggable"
-              />
+            <Block
+              className="bg-neutral-200 text-black h-44"
+              href={nossosServicos.href}
+              plus="text-primary"
+            >
+              <div className="w-full">
+                <Typo typo="block" className="mb-3">
+                  <Info info="nossosServicos" text="label" />
+                </Typo>
+              </div>
             </Block>
             <Block
               className="bg-secondary flex-1 text-white"
