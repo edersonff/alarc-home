@@ -39,9 +39,9 @@ export default function Blog() {
             Últimos posts
           </Typo>
           <div className="flex flex-col gap-20">
-            <PostCard {...posts[0]} />
-            <PostCard {...posts[1]} />
-            <PostCard {...posts[2]} />
+            {posts.slice(3).map((post) => (
+              <PostCard key={post.slug} {...post} />
+            ))}
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ export function PostBanner({
   const height = useMemo(() => {
     switch (size) {
       case 1:
-        return "h-48";
+        return "xl-lg:h-48 h-36";
       case 2:
         return "h-64";
     }
