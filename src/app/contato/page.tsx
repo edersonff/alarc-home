@@ -13,6 +13,7 @@ import { emailService } from "@/services/email";
 import { useErrorStore } from "@/store/error";
 import Lottie, { LottieRef } from "lottie-react";
 import emailAnim from "@/../public/static/lottie/email.json";
+import Link from "next/link";
 
 export default function Contato() {
   const contato = useInfoStore((state) => state.contato);
@@ -22,41 +23,48 @@ export default function Contato() {
       <Navbar absolute />
       <div className="relative w-full bg-[#EEE] flex flex-col justify-end">
         <div className="h-[123px] w-full"></div>
-        <div className="content w-full relative z-50">
-          <div className="w-full flex py-36">
-            <div className="xl-lg:w-[60%]">
-              <h1 className="xl-lg:text-[64px] text-5xl font-['Adam'] tracking-[0.06em] font-bold mb-8">
-                Entre em Contato
-              </h1>
-              <Typo
-                typo="paragraph"
-                style={{
-                  fontSize: "18px",
-                  lineHeight: "2",
-                }}
-                className="xl-lg:max-w-[600px] font-light text-dark/70 mb-[90px]"
-              >
-                Est libero exercitationem occaecati ducimus sit corrupti. Eos
-                asperiores qui porro facere quis velit. Iure magnam cupiditate
-                et minima dolores iste.
-              </Typo>
-              <div className="flex xl-lg:gap-main gap-2">
-                <Button
+        <div className="w-full">
+          <div className="content w-full relative z-50">
+            <div className="w-full flex py-36">
+              <div className="xl-lg:w-[60%]">
+                <h1 className="xl-lg:text-[64px] text-5xl font-['Adam'] tracking-[0.06em] font-bold mb-8">
+                  Entre em Contato
+                </h1>
+                <Typo
+                  typo="paragraph"
                   style={{
                     fontSize: "18px",
+                    lineHeight: "2",
                   }}
-                  className="min-w-[267px]"
+                  className="xl-lg:max-w-[600px] font-light text-dark/70 mb-[90px]"
                 >
-                  Enviar Mensagem
-                </Button>
-                <GhostButton
-                  style={{
-                    fontSize: "18px",
-                  }}
-                  className="min-w-[169px] hover:bg-opacity-20"
-                >
-                  Voltar
-                </GhostButton>
+                  Est libero exercitationem occaecati ducimus sit corrupti. Eos
+                  asperiores qui porro facere quis velit. Iure magnam cupiditate
+                  et minima dolores iste.
+                </Typo>
+                <div className="flex xl-lg:flex-row flex-col xl-lg:gap-main gap-2">
+                  <Button
+                    style={{
+                      fontSize: "18px",
+                    }}
+                    href="#forms"
+                    target="_self"
+                    className="min-w-[267px] center"
+                  >
+                    Enviar Mensagem
+                  </Button>
+                  <GhostButton
+                    style={{
+                      fontSize: "18px",
+                    }}
+                    target="_self"
+                    href="/"
+                    as={Link}
+                    className="min-w-[169px] center hover:bg-opacity-20"
+                  >
+                    Voltar
+                  </GhostButton>
+                </div>
               </div>
             </div>
           </div>
@@ -115,7 +123,7 @@ export default function Contato() {
           </CTA>
         </div>
       </div>
-      <div className="min-h-[621px] w-full relative" id="forms">
+      <div className="xl-lg:min-h-[621px] w-full relative" id="forms">
         <Image
           src="/images/background/forms.jpg"
           alt="Contato forms"
@@ -181,7 +189,7 @@ export function Forms() {
   };
 
   return (
-    <div className="flex gap-main content xl-lg:w-1/2 overflow-hidden xl-lg:rounded-[0px] absolute mx-auto z-50 bg-white shadow-xl">
+    <div className="flex gap-main content xl-lg:w-1/2 w-full overflow-hidden xl-lg:rounded-[0px] xl-lg:absolute mx-auto z-50 bg-white shadow-xl">
       <form onSubmit={sendEmail} className="flex-1 xl-lg:px-16 py-10 px-10">
         {
           // /public/static/lottie/email.json
@@ -206,7 +214,7 @@ export function Forms() {
               </div>
 
               <div className="flex flex-col gap-[5px] mb-12">
-                <div className="flex gap-main">
+                <div className="flex gap-main xl-lg:flex-row flex-col">
                   <div className="flex-1">
                     <Input
                       innerRef={nameRef}
@@ -247,7 +255,7 @@ export function Forms() {
                   className="w-full h-[200px] p-4 rounded-[10px] border-2 border-dark/20 focus:border-primary outline-none resize-none"
                 ></textarea>
               </div>
-              <div className="flex xl-lg:gap-main gap-2 max-h-14">
+              <div className="flex xl-lg:flex-row flex-col xl-lg:gap-main gap-2 xl-lg:max-h-14">
                 <Button
                   style={{
                     fontSize: "18px",
