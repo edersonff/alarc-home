@@ -18,7 +18,7 @@ export default function Navbar({ absolute }: { absolute?: boolean }) {
             loading="eager"
             alt="Logo"
             width={200}
-            height={200}
+            height={60}
             className="unselectable undraggable"
           />
         </Link>
