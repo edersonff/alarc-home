@@ -23,7 +23,7 @@ export type InfoStore = {
   nossosClientes: any;
   nossosServicos: any;
   noticias: any;
-  pages: any;
+  pages: (typeof pages)[0][];
   quemSomos: any;
   tools: any;
   posts: PostType[];

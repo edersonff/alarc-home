@@ -1,13 +1,18 @@
-[{
+[
+  {
     "title": "Início",
     "href": "/"
-}, {
+  },
+  {
     "title": "Sobre",
     "href": "/quem-somos"
-}, {
+  },
+  {
     "title": "Nossos Clientes",
     "href": "/nossos-clientes"
-}, {
-    "title": "Fale Conosco",
-    "href": "/contato"
-}]
+  },
+  {
+    "title": "Nossos Serviços",
+    "href": "/nossos-servicos"
+  }
+]
