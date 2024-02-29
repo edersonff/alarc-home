@@ -17,7 +17,7 @@ export default function Header() {
         style={{
           fontSize: "1.75rem",
         }}
-        typo="sectionTitle"
+        typo="section-title"
         as="h2"
       >
         {greeting}!
