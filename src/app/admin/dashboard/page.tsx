@@ -58,7 +58,7 @@ export default function Dashboard() {
                   Avaliações
                 </Typo>
                 <p className="text-gray-600">
-                  As últimas avaliações regristadas no blog.
+                  As últimas avaliações registradas no site.
                 </p>
               </div>
               <div>
