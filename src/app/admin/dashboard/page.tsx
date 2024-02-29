@@ -26,7 +26,7 @@ export default function Dashboard() {
           <Block>
             <div className="w-full mb-7 pb-4 border-b border-neutral-200 flex justify-between">
               <div>
-                <Typo typo="blockTitle" className="mb-1">
+                <Typo typo="block-title" className="mb-1">
                   Últimos Posts
                 </Typo>
                 <p className="text-gray-600">
@@ -54,7 +54,7 @@ export default function Dashboard() {
           <Block>
             <div className="w-full mb-7 pb-4 border-b border-neutral-200 flex justify-between">
               <div>
-                <Typo typo="blockTitle" className="mb-1">
+                <Typo typo="block-title" className="mb-1">
                   Avaliações
                 </Typo>
                 <p className="text-gray-600">
@@ -81,7 +81,7 @@ export default function Dashboard() {
 
         <div className="w-full flex flex-col gap-main">
           <Block>
-            <Typo typo="blockTitle" className="mb-6">
+            <Typo typo="block-title" className="mb-6">
               Resumos
             </Typo>
             <div className="flex flex-col gap-main">

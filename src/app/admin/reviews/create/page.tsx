@@ -115,7 +115,7 @@ export default function Reviews() {
             {preview && (
               <>
                 <div className="w-full flex justify-between items-center">
-                  <Typo typo="blockTitle" as="h2" className="mb-8">
+                  <Typo typo="block-title" as="h2" className="mb-8">
                     Preview
                   </Typo>
                   <Button
@@ -145,7 +145,7 @@ export default function Reviews() {
               style={{
                 display: preview ? "none" : "block",
               }}
-              typo="blockTitle"
+              typo="block-title"
               as="h2"
               className="mb-8"
             >

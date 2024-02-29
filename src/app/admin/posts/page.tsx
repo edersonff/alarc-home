@@ -63,7 +63,7 @@ export default function Posts() {
           <Block>
             <div className="w-full mb-11 flex justify-between">
               <div>
-                <Typo typo="blockTitle" className="mb-1">
+                <Typo typo="block-title" className="mb-1">
                   Últimos Posts
                 </Typo>
                 <p className="text-gray-600">
