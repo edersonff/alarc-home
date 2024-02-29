@@ -14,6 +14,7 @@ import { useErrorStore } from "@/store/error";
 import Lottie, { LottieRef } from "lottie-react";
 import emailAnim from "@/../public/static/lottie/email.json";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function Contato() {
   const contato = useInfoStore((state) => state.contato);
@@ -131,10 +132,10 @@ export default function Contato() {
           className="object-cover undraggable unselectable"
         />
         <div className="py-24 relative z-30 text-center text-white">
-          <h2 className="text-5xl mb-2 uppercase mix-blend-overlay">
+          <h2 className="text-5xl mb-4 uppercase mix-blend-overlay">
             Entre em <b>Contato</b>
           </h2>
-          <p className="text-[18px] font-light text-opacity-70">
+          <p className="text-[16px] font-light text-opacity-70">
             Nós iremos responder suas perguntas e questões.
           </p>
         </div>
@@ -143,6 +144,7 @@ export default function Contato() {
         </div>
       </div>
       <div className="w-full h-[40vh]" />
+      <Footer />
     </div>
   );
 }
@@ -189,96 +191,93 @@ export function Forms() {
   };
 
   return (
-    <div className="flex gap-main content xl-lg:w-1/2 w-full overflow-hidden xl-lg:rounded-[0px] xl-lg:absolute mx-auto z-50 bg-white shadow-xl">
-      <form onSubmit={sendEmail} className="flex-1 xl-lg:px-16 py-10 px-10">
-        {
-          // /public/static/lottie/email.json
-          loading ? (
-            <div className="w-full h-full center">
-              <Lottie
-                loop={false}
-                animationData={emailAnim}
-                style={{
-                  width: "200px",
-                  height: "200px",
-                }}
-              />
+    <div className="flex content w-full overflow-hidden xl-lg:absolute mx-auto z-50 rounded-2xl bg-white shadow-lg shadow-black/5">
+      <div className="center xl-lg:px-20 border-r border-r-neutral-200">
+        <Image
+          src="/images/illustrations/email.svg"
+          alt="Email illustration"
+          width={300}
+          height={300}
+          className="object-contain"
+        />
+      </div>
+      <form onSubmit={sendEmail} className="flex-1 py-12 px-16">
+        {loading ? (
+          <div className="w-full h-full center">
+            <Lottie
+              loop={false}
+              animationData={emailAnim}
+              style={{
+                width: "200px",
+                height: "200px",
+              }}
+            />
+          </div>
+        ) : (
+          <>
+            <div className="mb-10">
+              <p className="text-[16px] font-light">
+                Envie-nos uma mensagem e nós iremos responder suas perguntas e
+                questões.
+              </p>
             </div>
-          ) : (
-            <>
-              <div className="mb-12">
-                <p className="text-[18px] font-light">
-                  Envie-nos uma mensagem e nós iremos responder suas perguntas e
-                  questões.
-                </p>
-              </div>
 
-              <div className="flex flex-col gap-[5px] mb-12">
-                <div className="flex gap-main xl-lg:flex-row flex-col">
-                  <div className="flex-1">
-                    <Input
-                      innerRef={nameRef}
-                      required
-                      type="text"
-                      name="name"
-                      placeholder="Nome"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <Input
-                      innerRef={emailRef}
-                      required
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      className="mb-6"
-                    />
-                  </div>
-                </div>
-
-                <div>
+            <div className="flex flex-col gap-[5px] mb-12">
+              <div className="flex gap-3 xl-lg:flex-row flex-col">
+                <div className="flex-1">
                   <Input
-                    innerRef={subjectRef}
-                    type="text"
+                    innerRef={nameRef}
                     required
-                    name="subject"
-                    placeholder="Assunto"
-                    className="mb-6"
+                    type="text"
+                    name="name"
+                    placeholder="Nome"
                   />
                 </div>
+                <div className="flex-1">
+                  <Input
+                    innerRef={emailRef}
+                    required
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className="mb-3"
+                  />
+                </div>
+              </div>
 
-                <textarea
-                  ref={messageRef}
-                  name="message"
+              <div>
+                <Input
+                  innerRef={subjectRef}
+                  type="text"
                   required
-                  placeholder="Mensagem"
-                  className="w-full h-[200px] p-4 rounded-[10px] border-2 border-dark/20 focus:border-primary outline-none resize-none"
-                ></textarea>
+                  name="subject"
+                  placeholder="Assunto"
+                  className="mb-3"
+                />
               </div>
-              <div className="flex xl-lg:flex-row flex-col xl-lg:gap-main gap-2 xl-lg:max-h-14">
-                <Button
-                  style={{
-                    fontSize: "18px",
-                  }}
-                  className="min-w-[267px]"
-                  type="submit"
-                >
-                  Enviar Mensagem
-                </Button>
-                <OutlinedButton
-                  innerRef={resetButton}
-                  style={{
-                    fontSize: "18px",
-                  }}
-                  className="min-w-[169px]"
-                  type="reset"
-                >
-                  Cancelar
-                </OutlinedButton>
-              </div>
-            </>
-          )
-        }
+
+              <textarea
+                ref={messageRef}
+                name="message"
+                required
+                placeholder="Mensagem"
+                className="w-full h-[200px] p-4 rounded-[10px] border-2 bg-white border-dark/20 focus:border-primary outline-none resize-none"
+              ></textarea>
+            </div>
+            <div className="flex xl-lg:flex-row flex-col xl-lg:gap-main gap-2 xl-lg:max-h-14">
+              <Button className="min-w-[267px] flex-1" type="submit">
+                Enviar Mensagem
+              </Button>
+              <OutlinedButton
+                innerRef={resetButton}
+                className="min-w-[169px]"
+                type="reset"
+              >
+                Cancelar
+              </OutlinedButton>
+            </div>
+          </>
+        )}
       </form>
     </div>
   );
@@ -313,7 +312,7 @@ function Input({
         onChange={handleOnChange}
         ref={innerRef}
         className={
-          "mb-2 w-full py-3 border-2 border-dark/20 focus:border-primary outline-none rounded-[10px] px-4 " +
+          "mb-2 w-full py-2.5 border-2 border-dark/20 bg-white focus:border-primary outline-none rounded-[10px] px-4 " +
           className +
           (error ? " invalid" : "")
         }
