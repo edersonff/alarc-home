@@ -10,11 +10,6 @@ export const AdminNavbarItems = [
     icon: GoHomeFill,
   },
   {
-    label: "Sobre",
-    path: "/admin/about",
-    icon: IoIosInformationCircle,
-  },
-  {
     label: "Editor",
     path: "/admin/editor",
     icon: IoIosInformationCircle,
