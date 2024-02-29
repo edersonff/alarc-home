@@ -80,7 +80,7 @@ export const typoStyles = {
   },
   paragraph: {
     class:
-      "text-dark xl-lg:text-[18px] text-[16px] leading-[50px] tracking-wide ",
+      "text-dark xl-lg:text-[18px] text-[16px] leading-[280%] tracking-wide ",
     tag: "div",
   },
   button: { class: "text-xl font-bold", tag: "span" },

@@ -22,7 +22,7 @@ export default function Footer() {
                 className="me-3"
                 alt="FlowBite Logo"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap ">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap font-['Adam'] ">
                 Alarc
               </span>
             </Link>
