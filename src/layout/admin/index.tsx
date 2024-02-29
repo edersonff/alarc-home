@@ -16,7 +16,6 @@ export default function AdminLayout({
   const { isLogged } = useAuthStore();
 
   if (!isLogged) {
-    console.log({ isLogged });
     return notFound();
   }
 
@@ -26,7 +25,7 @@ export default function AdminLayout({
         <Navbar />
         <div className="w-full h-full flex flex-col pt-7 overflow-y-scroll">
           <Header />
-          <div className="bg-green-600/5 xl-lg:p-[30px] rounded-tl-[25px]">
+          <div className="bg-neutral-100 xl-lg:p-[30px] rounded-tl-[25px]">
             {children}
           </div>
         </div>

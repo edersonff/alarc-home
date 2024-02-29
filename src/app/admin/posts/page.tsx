@@ -76,7 +76,7 @@ export default function Posts() {
                   className="text-lg py-[12px]"
                   target=""
                 >
-                  <TiPlus className="text-2xl" />
+                  <TiPlus className="text-2xl mr-1" />
                   Novo
                 </Button>
               </div>
@@ -87,13 +87,13 @@ export default function Posts() {
                   <div className="absolute right-1 top-1 z-30 flex gap-[15px]">
                     <OutlinedButton
                       onClick={() => setUpdatePost(post.slug)}
-                      className="min-w-max text-xs py-[10px]"
+                      className="min-w-max text-xs py-[9.9px]"
                     >
                       Editar
                     </OutlinedButton>
                     <OutlinedButton
                       onClick={() => setDeletePost(post.slug)}
-                      className="min-w-max text-xs py-[10px] border-red-600 text-red-600 hover:bg-red-600/15"
+                      className="min-w-max text-xs py-[9.9px] border-red-600 text-red-600 hover:bg-red-600/15"
                     >
                       Excluir
                     </OutlinedButton>

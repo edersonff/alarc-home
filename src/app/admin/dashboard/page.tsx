@@ -24,9 +24,9 @@ export default function Dashboard() {
       <div className="flex flex-gap xl-lg:flex-row flex-col w-full gap-main">
         <div className="flex-1 flex flex-col gap-main">
           <Block>
-            <div className="w-full mb-7 pb-4 border-b border-neutral-200 flex justify-between">
+            <div className="w-full mb-12 pb-8 border-b border-neutral-200 flex justify-between">
               <div>
-                <Typo typo="block-title" className="mb-1">
+                <Typo typo="block-title" className="mb-2">
                   Últimos Posts
                 </Typo>
                 <p className="text-gray-600">
@@ -36,10 +36,10 @@ export default function Dashboard() {
               <div>
                 <Button
                   href="/admin/posts/create"
-                  className="text-[15px] py-[10px]"
+                  className="text-[15px] py-[9.9px] rounded-lg"
                   target=""
                 >
-                  <TiPlus className="text-2xl" />
+                  <TiPlus className="text-2xl mr-1" />
                   Novo
                 </Button>
               </div>
@@ -52,9 +52,9 @@ export default function Dashboard() {
           </Block>
 
           <Block>
-            <div className="w-full mb-7 pb-4 border-b border-neutral-200 flex justify-between">
+            <div className="w-full mb-16 pb-8 border-b border-neutral-200 flex justify-between">
               <div>
-                <Typo typo="block-title" className="mb-1">
+                <Typo typo="block-title" className="mb-2">
                   Avaliações
                 </Typo>
                 <p className="text-gray-600">
@@ -64,10 +64,10 @@ export default function Dashboard() {
               <div>
                 <Button
                   href="/admin/reviews/create"
-                  className="text-[15px] py-[10px]"
+                  className="text-[15px] py-[9.9px] rounded-lg"
                   target=""
                 >
-                  <TiPlus className="text-2xl" />
+                  <TiPlus className="text-2xl mr-1" />
                   Novo
                 </Button>
               </div>

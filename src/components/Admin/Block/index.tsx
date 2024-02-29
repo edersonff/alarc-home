@@ -11,7 +11,7 @@ export default function Block({
   return (
     <div
       className={
-        "py-10 px-12 bg-white border-2 border-gray-300 rounded-xl " + className
+        "py-10 px-12 bg-white border-2 border-gray-200 rounded-xl " + className
       }
       {...props}
     >

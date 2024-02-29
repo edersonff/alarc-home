@@ -74,7 +74,7 @@ export default function Reviews() {
                   className="text-lg py-[12px]"
                   target=""
                 >
-                  <TiPlus className="text-2xl" />
+                  <TiPlus className="text-2xl mr-1" />
                   Novo
                 </Button>
               </div>
@@ -89,13 +89,13 @@ export default function Reviews() {
                   <div className="absolute right-1 top-1 z-10 flex gap-[15px]">
                     <OutlinedButton
                       onClick={() => setUpdateReview(id)}
-                      className="min-w-max text-xs py-[10px]"
+                      className="min-w-max text-xs py-[9.9px]"
                     >
                       Editar
                     </OutlinedButton>
                     <OutlinedButton
                       onClick={() => setDeleteReview(id)}
-                      className="min-w-max text-xs py-[10px] border-red-600 text-red-600 hover:bg-red-600/15"
+                      className="min-w-max text-xs py-[9.9px]border-red-600 text-red-600 hover:bg-red-600/15"
                     >
                       Excluir
                     </OutlinedButton>
