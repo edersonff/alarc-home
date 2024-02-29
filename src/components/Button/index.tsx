@@ -18,7 +18,7 @@ export default function Button({
       target={target}
       className={
         className +
-        " py-4 px-8 min-w-44 center rounded-full font-medium text-xl bg-primary text-white hover:bg-opacity-85 transition-all active:bg-opacity-100 "
+        " py-[14px] px-12 min-w-44 center rounded-full font-medium text-[18px] bg-primary text-white hover:bg-opacity-85 transition-all active:bg-opacity-100 "
       }
       {...props}
     />
