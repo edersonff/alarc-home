@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import ImageLoading from "@/components/Image";
 import Navbar from "@/components/Navbar";
 import { Info, Typo } from "@/components/Typo";
@@ -21,7 +22,10 @@ export default function ContentLayout({
       <Navbar />
       <div className="w-full relative mt-14">
         <div className="content flex items-start relative z-10 py-16">
-          <Typo typo="sectionTitle" className="px-10 py-[10px] bg-white">
+          <Typo
+            typo="section-title"
+            className="px-10 py-3 bg-white xl-lg:w-auto w-full text-center"
+          >
             <Info info={info} text="title" />
           </Typo>
         </div>
@@ -35,6 +39,7 @@ export default function ContentLayout({
         />
       </div>
       <div className="w-full">{children}</div>
+      <Footer />
     </div>
   );
 }

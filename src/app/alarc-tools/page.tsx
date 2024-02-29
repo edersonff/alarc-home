@@ -22,7 +22,7 @@ export default function HeroTools() {
           src={tools.image}
           alt="Tools Image"
         />
-        <div className="flex gap-main">
+        <div className="flex gap-main xl-lg:mt-24">
           <Button onClick={() => push(tools.redirect)}>Saiba Mais</Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>

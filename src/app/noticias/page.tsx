@@ -7,12 +7,13 @@ import Image from "@/components/Image";
 import Link from "next/link";
 import React, { useMemo } from "react";
 import { useInfoStore } from "@/store/info";
+import Footer from "@/components/Footer";
 
 export default function Blog() {
   const posts = useInfoStore((state) => state.posts);
 
   return (
-    <div className="flex flex-col gap-20 mb-24">
+    <div className="flex flex-col gap-20">
       <Navbar />
       <div className="w-full">
         <div className="content flex xl-lg:flex-row flex-col xl-lg:h-[40vh] gap-main">
@@ -32,7 +33,7 @@ export default function Blog() {
       <div className="w-full">
         <div className="content">
           <Typo
-            typo="sectionTitle"
+            typo="section-title"
             as="h2"
             className="text-[28px] font-bold mt-10 mb-16"
           >
@@ -45,6 +46,7 @@ export default function Blog() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

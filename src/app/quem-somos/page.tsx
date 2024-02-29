@@ -22,7 +22,7 @@ export default function QuemSomos() {
           src={quemSomos.image}
           alt="Quem Somos"
         />
-        <div className="flex gap-main">
+        <div className="flex gap-main xl-lg:mt-24">
           <Button onClick={() => push(quemSomos.redirect)}>Saiba Mais</Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>

@@ -13,7 +13,7 @@ export default function NossosServicos() {
   const { push } = useRouter();
   return (
     <ContentLayout info="nossosServicos">
-      <div className="content flex flex-col gap-14 my-[72px]">
+      <div className="content flex flex-col gap-14 mt-24 mb-[72px]">
         <Typo typo="paragraph" className="xl-lg:w-2/3">
           <Info info="nossosServicos" text="text" />
         </Typo>
@@ -22,7 +22,7 @@ export default function NossosServicos() {
           src={nossosServicos.image}
           alt="Nossos Serviços"
         />
-        <div className="flex gap-main">
+        <div className="flex gap-main xl-lg:mt-24">
           <Button onClick={() => push(nossosServicos.redirect)}>
             Saiba Mais
           </Button>

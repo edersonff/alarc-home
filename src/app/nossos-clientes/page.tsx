@@ -20,14 +20,14 @@ export default function NossosClientes() {
         </Typo>
         <div className="center flex-col gap-[70px] w-full mt-16">
           <Typo
-            typo="sectionTitle"
+            typo="section-title"
             className="xl-lg:px-[70px] text-center px-10 py-[10px] mb-16 bg-neutral-600 text-white uppercase"
           >
             O que as pessoas dizem
           </Typo>
           <Reviews />
         </div>
-        <div className="center w-full gap-main mt-16">
+        <div className="center w-full gap-main xl-lg:mt-24">
           <Button onClick={() => push(nossosClientes.redirect)}>
             Saiba Mais
           </Button>

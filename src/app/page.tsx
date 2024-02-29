@@ -1,5 +1,4 @@
 import Blocks from "@/components/Blocks";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -8,7 +7,15 @@ export default function Home() {
       <h1 className="hidden">Página Inicial - Alarc</h1>
       <Navbar />
       <Blocks />
-      <Footer />
+
+      <footer className="w-full pb-5">
+        <div className="content text-[#545455]">
+          <p>
+            © 2018 - {new Date().getFullYear()} Alarc - Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }

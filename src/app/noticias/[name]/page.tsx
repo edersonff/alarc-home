@@ -7,6 +7,7 @@ import Image from "@/components/Image";
 import Link from "next/link";
 import React, { useEffect, useMemo } from "react";
 import { useInfoStore } from "@/store/info";
+import Footer from "@/components/Footer";
 
 export default function Blog({ params }: { params: { name: string } }) {
   const posts = useInfoStore((state) => state.posts);
@@ -22,9 +23,9 @@ export default function Blog({ params }: { params: { name: string } }) {
   }, [post]);
 
   return (
-    <div className="flex flex-col gap-12 mb-24">
+    <div className="flex flex-col gap-12">
       <Navbar />
-      <div className="w-full center flex-col">
+      <div className="w-full center flex-col mt-[2%]">
         <div className="px-10 py-2.5 bg-green-400 bg-opacity-20 rounded-full mb-6 text-green-400 text-[13px] font-semibold uppercase tracking-wide">
           <span>{post.tags[0] || "E-commerce"}</span>
         </div>
@@ -37,7 +38,7 @@ export default function Blog({ params }: { params: { name: string } }) {
           </Typo>
         </div>
         <div className="content w-full">
-          <div className="min-h-[400px] mb-[68px] w-full relative rounded-[22px] overflow-hidden">
+          <div className="min-h-[400px] mb-[72px] w-full relative rounded-[22px] overflow-hidden">
             <Image
               src={post.image}
               alt={post.title}
@@ -99,6 +100,7 @@ export default function Blog({ params }: { params: { name: string } }) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -62,8 +62,10 @@ export default function CanaisAtuacao() {
           <Partner title="Demais Marketplaces" images={others} />
         </div>
 
-        <div className="flex gap-main">
-          <Button href={canaisAtuacao.redirect}>Saiba Mais</Button>
+        <div className="flex gap-main xl-lg:mt-24">
+          <Button target="" href={canaisAtuacao.redirect}>
+            Saiba Mais
+          </Button>
           <OutlinedButton onClick={() => push("/")}>Voltar</OutlinedButton>
         </div>
       </div>
