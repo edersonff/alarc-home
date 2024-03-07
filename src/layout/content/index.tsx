@@ -38,7 +38,7 @@ export default function ContentLayout({
           className="-z-10 unselectable undraggable"
         />
       </div>
-      <div className="w-full">{children}</div>
+      <div className="w-full relative">{children}</div>
       <Footer />
     </div>
   );
