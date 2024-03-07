@@ -85,8 +85,8 @@ export default function Contato() {
               title="Venha nos conhecer"
               subtitle="Nosso endereço"
               link={{
-                label: "Vinhedo, São Paulo 13280168, BR",
-                href: "https://maps.app.goo.gl/y4QbqLAiceuuVnpt8",
+                label: "Antônio M Tôrres Filho, 49 - Centro, São Paulo",
+                href: "https://maps.app.goo.gl/GAXkd8SdUmRu4CNe8",
               }}
               image={
                 <iframe
@@ -94,7 +94,7 @@ export default function Contato() {
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117486.80135974068!2d-47.07295625420295!3d-23.04349805682956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf32972381d79d%3A0x1dd8779027018146!2sVinhedo%2C%20SP%2C%2013280-000!5e0!3m2!1spt-BR!2sbr!4v1707251754335!5m2!1spt-BR!2sbr"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.6140206701743!2d-46.972976700000004!3d-23.0379401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2d667c20e791%3A0x94c4896a12065868!2sR.%20Ant%C3%B4nio%20M%20T%C3%B4rres%20Filho%2C%2049%20-%20Centro%2C%20Vinhedo%20-%20SP%2C%2013280-000!5e0!3m2!1spt-BR!2sbr!4v1709823807355!5m2!1spt-BR!2sbr"
                 />
               }
               orientation="left"
