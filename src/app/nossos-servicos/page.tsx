@@ -16,7 +16,7 @@ export default function NossosServicos() {
   return (
     <ContentLayout info="nossosServicos">
       <div className="content flex flex-col gap-14 mt-24 mb-[72px]">
-        <div className="">
+        <div>
           <Typo typo="paragraph">
             <Info info="nossosServicos" text="text" />
           </Typo>
@@ -24,12 +24,27 @@ export default function NossosServicos() {
           <div className="flex flex-col gap-main my-20">
             <div className="flex xl-lg:flex-row flex-col gap-main">
               <ServiceBlock title="Marketing" Icon={FaBullhorn} url="/contato">
-                Marketing editorial, aquisições, monetização, estudo de mercado
-                e web design.
+                {[
+                  "Marketing digital",
+                  "Aquisições",
+                  "Monetização",
+                  "Estudo de mercado",
+                  "Web design",
+                ].map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ServiceBlock>
               <ServiceBlock title="Anúncios" Icon={FaAd} url="/contato">
-                Fotografia e vídeo, criação de anúncios, revisão de anúncios,
-                precificação ampla, vinculações TI e cadastros em canais.
+                {[
+                  "Fotografia e vídeo",
+                  "Criação de anúncios",
+                  "Revisão de anúncios",
+                  "Precificação ampla",
+                  "Vinculações TI",
+                  "Cadastros em canais",
+                ].map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ServiceBlock>
             </div>
             <div className="flex xl-lg:flex-row flex-col gap-main">
@@ -38,13 +53,27 @@ export default function NossosServicos() {
                 Icon={FaChartLine}
                 url="/contato"
               >
-                Campanhas canais, ads e cupons, positivação {">"} 80%,
-                gerenciamento Fulfillment, acompanhamento de indicadores e
-                monitoria de níveis de serviço.
+                {[
+                  "Campanhas canais",
+                  "Ads e cupons",
+                  "Positivação > 80%",
+                  "Gerenciamento Fulfillment",
+                  "Acompanhamento de indicadores",
+                  "Monitoria de níveis de serviço",
+                ].map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ServiceBlock>
               <ServiceBlock title="Atendimento" Icon={FaUser} url="/contato">
-                Perguntas pré-vendas, atendimento pós-vendas, resolução de
-                conflitos, negociação de vendas e chamados com canais.
+                {[
+                  "Perguntas pré-vendas",
+                  "Atendimento pós-vendas",
+                  "Resolução de conflitos",
+                  "Negociação de vendas",
+                  "Chamados com canais",
+                ].map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ServiceBlock>
             </div>
           </div>
