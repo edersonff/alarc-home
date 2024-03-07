@@ -24,13 +24,13 @@ export default function ServiceBlock({
         <div className="flex flex-col justify-between">
           <div>
             <h3 className="text-[24px] font-bold mb-4">{title}</h3>
-            <p className="mb-6 text-black/70 leading-[280%] text-[12px] font-medium group-hover:text-white/90 duration-200">
+            <p className="mb-6 text-black/70 leading-[280%] text-[14px] font-medium group-hover:text-white/90 duration-200">
               {children}
             </p>
           </div>
           <span className=" text-primary group-hover:text-white flex text-sm font-bold hover:underline">
-            Learn more
-            <FiExternalLink className="inline-block ml-2 -mt-1" />
+            Saiba mais
+            <FiExternalLink className="inline-block ml-2 mt-0.5" />
           </span>
         </div>
       </div>
