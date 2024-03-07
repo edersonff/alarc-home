@@ -1,10 +1,11 @@
 "use client";
 
+import Loading from "@/app/loading";
 import Header from "@/components/Admin/Header";
 import Navbar from "@/components/Admin/Navbar";
 import { useAuthStore } from "@/store/auth";
 import { notFound } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "react-quill/dist/quill.snow.css";
 
@@ -13,7 +14,16 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [hydrated, setHydrated] = useState(false);
   const { isLogged } = useAuthStore();
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) {
+    return <Loading />;
+  }
 
   if (!isLogged) {
     return notFound();
