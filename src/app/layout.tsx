@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
 import AppLayout from "@/layout/app";
-import HydrationZustand from "@/layout/hydration";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -64,9 +63,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${roboto.variable} ${adam.variable}`}>
-        <HydrationZustand>
-          <AppLayout>{children}</AppLayout>
-        </HydrationZustand>
+        <AppLayout>{children}</AppLayout>
       </body>
     </html>
   );
