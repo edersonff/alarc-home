@@ -25,54 +25,62 @@ export default function NossosServicos() {
             <div className="flex xl-lg:flex-row flex-col gap-main">
               <ServiceBlock title="Marketing" Icon={FaBullhorn} url="/contato">
                 {[
-                  "Marketing digital",
                   "Aquisições",
-                  "Monetização",
-                  "Estudo de mercado",
                   "Web design",
+                  "Monetização",
+                  "Marketing digital",
+                  "Estudo de mercado",
                 ].map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li className="-m-0.5 text-center" key={index}>
+                    {item}
+                  </li>
                 ))}
               </ServiceBlock>
               <ServiceBlock title="Anúncios" Icon={FaAd} url="/contato">
                 {[
+                  "Vinculações TI",
                   "Fotografia e vídeo",
+                  "Precificação ampla",
                   "Criação de anúncios",
                   "Revisão de anúncios",
-                  "Precificação ampla",
-                  "Vinculações TI",
                   "Cadastros em canais",
                 ].map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li className="-m-0.5 text-center" key={index}>
+                    {item}
+                  </li>
                 ))}
               </ServiceBlock>
             </div>
-            <div className="flex xl-lg:flex-row flex-col gap-main">
+            <div className="flex justify-center gap-main">
               <ServiceBlock
                 title="Desempenho"
                 Icon={FaChartLine}
                 url="/contato"
               >
                 {[
-                  "Campanhas canais",
                   "Ads e cupons",
                   "Positivação > 80%",
+                  "Campanhas canais",
                   "Gerenciamento Fulfillment",
-                  "Acompanhamento de indicadores",
                   "Monitoria de níveis de serviço",
+                  "Acompanhamento de indicadores",
                 ].map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li className="-m-0.5 text-center" key={index}>
+                    {item}
+                  </li>
                 ))}
               </ServiceBlock>
               <ServiceBlock title="Atendimento" Icon={FaUser} url="/contato">
                 {[
                   "Perguntas pré-vendas",
-                  "Atendimento pós-vendas",
-                  "Resolução de conflitos",
-                  "Negociação de vendas",
                   "Chamados com canais",
+                  "Negociação de vendas",
+                  "Resolução de conflitos",
+                  "Atendimento pós-vendas",
                 ].map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li className="-m-0.5 text-center" key={index}>
+                    {item}
+                  </li>
                 ))}
               </ServiceBlock>
             </div>

@@ -2,7 +2,7 @@
 
 import Button from "@/components/Button";
 import OutlinedButton from "@/components/Button/Outlined";
-import ServiceBlock from "@/components/Service";
+import FeatureBlock from "@/components/Feature";
 import { Info, Typo } from "@/components/Typo";
 import ContentLayout from "@/layout/content";
 import { useInfoStore } from "@/store/info";
@@ -35,36 +35,36 @@ export default function HeroTools() {
 
           <div className="flex flex-col gap-main my-20">
             <div className="flex xl-lg:flex-row flex-col gap-main">
-              <ServiceBlock
+              <FeatureBlock
                 title="Precificação do Mercado Livre "
                 Icon={IoPricetags}
                 url="/contato"
               >
                 Controle de preço de estoque do Mercado Livre
-              </ServiceBlock>
-              <ServiceBlock
+              </FeatureBlock>
+              <FeatureBlock
                 title="Relatórios"
                 Icon={TbReportAnalytics}
                 url="/contato"
               >
                 Relatórios de vendas detalhados por canal
-              </ServiceBlock>
+              </FeatureBlock>
             </div>
             <div className="flex xl-lg:flex-row flex-col gap-main">
-              <ServiceBlock
+              <FeatureBlock
                 title="Automatização para carga"
                 Icon={FaBoxOpen}
                 url="/contato"
               >
                 Automatização de carga FULL Mercado Livre
-              </ServiceBlock>
-              <ServiceBlock
+              </FeatureBlock>
+              <FeatureBlock
                 title="Automatização de anuncios"
                 Icon={FaAd}
                 url="/contato"
               >
                 Automatização de ADS Mercado Livre
-              </ServiceBlock>
+              </FeatureBlock>
             </div>
           </div>
         </div>
