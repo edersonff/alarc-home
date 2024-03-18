@@ -4,7 +4,7 @@ import { PostBanner } from "@/app/noticias/page";
 import Block from "@/components/Admin/Block";
 import Summary from "@/components/Admin/Summary";
 import Button from "@/components/Button";
-import { Typo } from "@/components/Typo";
+
 import AdminLayout from "@/layout/admin";
 import { useInfoStore } from "@/store/info";
 import React from "react";
@@ -26,9 +26,7 @@ export default function Dashboard() {
           <Block>
             <div className="w-full mb-12 pb-8 border-b border-neutral-200 flex justify-between">
               <div>
-                <Typo typo="block-title" className="mb-2">
-                  Últimos Posts
-                </Typo>
+                <h2 className="block-title mb-2">Últimos Posts</h2>
                 <p className="text-gray-600">
                   Os últimos três posts publicados no blog.
                 </p>
@@ -54,9 +52,7 @@ export default function Dashboard() {
           <Block>
             <div className="w-full mb-16 pb-8 border-b border-neutral-200 flex justify-between">
               <div>
-                <Typo typo="block-title" className="mb-2">
-                  Avaliações
-                </Typo>
+                <h2 className="block-title mb-2">Avaliações</h2>
                 <p className="text-gray-600">
                   As últimas avaliações registradas no site.
                 </p>
@@ -81,9 +77,7 @@ export default function Dashboard() {
 
         <div className="w-full flex flex-col gap-main">
           <Block>
-            <Typo typo="block-title" className="mb-6">
-              Resumos
-            </Typo>
+            <h2 className="block-title mb-6">Resumos</h2>
             <div className="flex flex-col gap-main">
               <Summary
                 color={colors.black}

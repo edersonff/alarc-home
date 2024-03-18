@@ -2,7 +2,7 @@
 
 import { PostType } from "@/@types/Post";
 import Navbar from "@/components/Navbar";
-import { Typo } from "@/components/Typo";
+
 import Image from "@/components/Image";
 import Link from "next/link";
 import React, { useMemo } from "react";
@@ -32,13 +32,9 @@ export default function Blog() {
       </div>
       <div className="w-full">
         <div className="content">
-          <Typo
-            typo="section-title"
-            as="h2"
-            className="text-[28px] font-bold mt-10 mb-16"
-          >
+          <h2 className="section-title text-[28px] font-bold mt-10 mb-16">
             Últimos posts
-          </Typo>
+          </h2>
           <div className="flex flex-col gap-20">
             {posts.slice(3).map((post) => (
               <PostCard key={post.slug} {...post} />
@@ -143,18 +139,13 @@ export function PostCard({ title, slug, text, date, image }: PostType) {
         />
       </div>
       <div className="flex-1">
-        <Typo
-          typo="agency"
-          as="h3"
-          className="mb-2 text-[26px] group-hover:text-dark transition-all duration-150"
-        >
+        <h3 className="agency mb-2 text-[26px] group-hover:text-dark transition-all duration-150">
           {title}
-        </Typo>
+        </h3>
         <p className="mb-6 text-[15px] font-medium text-dark/30">{date}</p>
-        <Typo
+        <div
           dangerouslySetInnerHTML={{ __html: text }}
-          typo="paragraph"
-          className="text-[18px] line-clamp-3"
+          className="paragraph text-[18px] line-clamp-3"
         />
       </div>
     </Link>

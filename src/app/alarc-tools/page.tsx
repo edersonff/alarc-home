@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 import OutlinedButton from "@/components/Button/Outlined";
 import FeatureBlock from "@/components/Feature";
-import { Info, Typo } from "@/components/Typo";
+import { Info } from "@/components/Typo";
 import ContentLayout from "@/layout/content";
 import { useInfoStore } from "@/store/info";
 import { useRouter } from "next/navigation";
@@ -20,9 +20,9 @@ export default function HeroTools() {
       <div className="content flex flex-col gap-14 my-[72px]">
         <div>
           <div className="relative">
-            <Typo typo="paragraph" className="xl-lg:w-2/3">
+            <div className="paragraph xl-lg:w-2/3">
               <Info info="tools" text="text" />
-            </Typo>
+            </div>
 
             <img
               className="xl-lg:absolute xl-lg:w-[40%] w-full right-0 bottom-0 h-auto object-right relative pointer-events-none"

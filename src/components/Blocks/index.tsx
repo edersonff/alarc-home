@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useMemo, useRef } from "react";
-import { Info, Typo } from "../Typo";
+import { Info } from "../Typo";
 import { BsArrowRightCircle } from "react-icons/bs";
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import Link from "next/link";
@@ -43,9 +43,9 @@ export default function Blocks() {
                 plus="text-primary"
               >
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="nossosServicos" text="label" />
-                  </Typo>
+                  </h2>
                 </div>
               </Block>
             </Show>
@@ -56,9 +56,9 @@ export default function Blocks() {
                 target="_blank"
               >
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="academia" text="label" />
-                  </Typo>
+                  </h2>
                   <BsArrowRightCircle className="text-white text-[54px]" />
                 </div>
               </Block>
@@ -73,9 +73,9 @@ export default function Blocks() {
                 plus="text-white"
               >
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="quemSomos" text="label" />
-                  </Typo>
+                  </h2>
                 </div>
               </Block>
             </Show>
@@ -86,9 +86,9 @@ export default function Blocks() {
                 plus="text-primary"
               >
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="tools" text="label" />
-                  </Typo>
+                  </h2>
                 </div>
               </Block>
             </Show>
@@ -102,9 +102,9 @@ export default function Blocks() {
                 plus="text-primary"
               >
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="nossosClientes" text="label" />
-                  </Typo>
+                  </h2>
                 </div>
               </Block>
             </Show>
@@ -115,9 +115,9 @@ export default function Blocks() {
                 plus="text-white"
               >
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="canaisAtuacao" text="label" />
-                  </Typo>
+                  </h2>
                 </div>
               </Block>
             </Show>
@@ -131,18 +131,18 @@ export default function Blocks() {
                 plus="text-white"
               >
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="noticias" text="label" />
-                  </Typo>
+                  </h2>
                 </div>
               </Block>
             </Show>
             <Show className="flex-1" delay={0.7}>
               <Block href={contato.href} className="bg-black flex-1 text-white">
                 <div className="w-full">
-                  <Typo typo="block" className="mb-3">
+                  <h2 className="block mb-3">
                     <Info info="contato" text="label" />
-                  </Typo>
+                  </h2>
                 </div>
 
                 <Image

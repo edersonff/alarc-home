@@ -3,7 +3,7 @@
 import Footer from "@/components/Footer";
 import ImageLoading from "@/components/Image";
 import Navbar from "@/components/Navbar";
-import { Info, Typo } from "@/components/Typo";
+import { Info } from "@/components/Typo";
 import { useInfoStore } from "@/store/info";
 import { InfoKeys } from "@/utils/api/info";
 import React from "react";
@@ -22,12 +22,9 @@ export default function ContentLayout({
       <Navbar />
       <div className="w-full relative mt-14">
         <div className="content flex items-start relative z-10 py-16">
-          <Typo
-            typo="section-title"
-            className="px-10 py-3 bg-white xl-lg:w-auto w-full text-center"
-          >
+          <h2 className="section-title px-10 py-3 bg-white xl-lg:w-auto w-full text-center">
             <Info info={info} text="title" />
-          </Typo>
+          </h2>
         </div>
         <ImageLoading
           src={(infoData[info] as any).background}

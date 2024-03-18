@@ -5,7 +5,6 @@ import { useInfoStore } from "@/store/info";
 import { ReviewType } from "@/@types/Review";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import Image from "next/image";
-import { Typo } from "../Typo";
 
 export default function Reviews() {
   const reviews = useInfoStore((state) => state.reviews);

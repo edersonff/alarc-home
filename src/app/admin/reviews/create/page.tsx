@@ -16,7 +16,7 @@ import colors from "tailwindcss/colors";
 import Image from "next/image";
 import { reviewsService } from "@/services/reviews";
 import dynamic from "next/dynamic";
-import { Typo } from "@/components/Typo";
+
 import { useErrorStore } from "@/store/error";
 import { useRouter } from "next/navigation";
 import { Review } from "@/components/Reviews";
@@ -115,9 +115,7 @@ export default function Reviews() {
             {preview && (
               <>
                 <div className="w-full flex justify-between items-center">
-                  <Typo typo="block-title" as="h2" className="mb-8">
-                    Preview
-                  </Typo>
+                  <h2 className="block-title mb-8">Preview</h2>
                   <Button
                     type="button"
                     style={{
@@ -141,16 +139,14 @@ export default function Reviews() {
                 </div>
               </>
             )}
-            <Typo
+            <h2
               style={{
                 display: preview ? "none" : "block",
               }}
-              typo="block-title"
-              as="h2"
-              className="mb-8"
+              className="block-title mb-8"
             >
               Novo Review
-            </Typo>
+            </h2>
             <form
               style={{
                 display: preview ? "none" : "flex",

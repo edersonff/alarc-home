@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 import OutlinedButton from "@/components/Button/Outlined";
 import Drawer from "@/components/Drawer";
 import Input from "@/components/Input";
-import { Typo } from "@/components/Typo";
+
 import AdminLayout from "@/layout/admin";
 import { useInfoStore } from "@/store/info";
 import React, {
@@ -63,9 +63,7 @@ export default function Posts() {
           <Block>
             <div className="w-full mb-11 flex justify-between">
               <div>
-                <Typo typo="block-title" className="mb-1">
-                  Últimos Posts
-                </Typo>
+                <h2 className="block-title mb-1">Últimos Posts</h2>
                 <p className="text-gray-600">
                   Os últimos posts publicados no blog.
                 </p>

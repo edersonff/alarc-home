@@ -2,7 +2,7 @@
 
 import { PostType } from "@/@types/Post";
 import Navbar from "@/components/Navbar";
-import { Typo } from "@/components/Typo";
+
 import Image from "@/components/Image";
 import Link from "next/link";
 import React, { useEffect, useMemo } from "react";
@@ -30,12 +30,10 @@ export default function Blog({ params }: { params: { name: string } }) {
           <span>{post.tags[0] || "E-commerce"}</span>
         </div>
         <div className="mb-12 text-center">
-          <Typo typo="post" className="mb-3">
-            {post.title}
-          </Typo>
-          <Typo typo="date">
+          <h1 className="post mb-3">{post.title}</h1>
+          <p className="date">
             {post.date} - <b>{post.owner}</b>
-          </Typo>
+          </p>
         </div>
         <div className="content w-full">
           <div className="min-h-[400px] mb-[72px] w-full relative rounded-[22px] overflow-hidden">
@@ -92,8 +90,8 @@ export default function Blog({ params }: { params: { name: string } }) {
               </div>
             </div>
             <div className="flex-1">
-              <Typo
-                typo="paragraph"
+              <div
+                className="paragraph"
                 dangerouslySetInnerHTML={{ __html: post.text }}
               />
             </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import GhostButton from "../Button/Ghost";
-import { Typo } from "../Typo";
+
 import { useInfoStore } from "@/store/info";
 
 export default function Navbar({ absolute }: { absolute?: boolean }) {
@@ -26,7 +26,7 @@ export default function Navbar({ absolute }: { absolute?: boolean }) {
           <div className="justify-end items-center gap-main inline-flex">
             {pages?.map((page: any) => (
               <Link key={page.href} href={page.href}>
-                <Typo typo="nav">{page.title}</Typo>
+                <div className="nav">{page.title}</div>
               </Link>
             ))}
           </div>

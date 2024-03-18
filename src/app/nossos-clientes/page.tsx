@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 import OutlinedButton from "@/components/Button/Outlined";
 import Reviews from "@/components/Reviews";
-import { Info, Typo } from "@/components/Typo";
+import { Info } from "@/components/Typo";
 import ContentLayout from "@/layout/content";
 import { useInfoStore } from "@/store/info";
 import { useRouter } from "next/navigation";
@@ -15,16 +15,13 @@ export default function NossosClientes() {
   return (
     <ContentLayout info="nossosClientes">
       <div className="content flex flex-col overflow-hidden gap-14 my-[72px]">
-        <Typo typo="paragraph">
+        <div className="paragraph">
           <Info info="nossosClientes" text="text" />
-        </Typo>
+        </div>
         <div className="center flex-col gap-[70px] w-full mt-16">
-          <Typo
-            typo="section-title"
-            className="xl-lg:px-[70px] text-center px-10 py-[10px] mb-16 bg-neutral-600 text-white uppercase"
-          >
+          <h2 className="section-title xl-lg:px-[70px] text-center px-10 py-[10px] mb-16 bg-neutral-600 text-white uppercase">
             O que as pessoas dizem
-          </Typo>
+          </h2>
           <Reviews />
         </div>
         <div className="center w-full gap-main xl-lg:mt-24">

@@ -17,7 +17,7 @@ import colors from "tailwindcss/colors";
 import Image from "next/image";
 import { postsService } from "@/services/posts";
 import dynamic from "next/dynamic";
-import { Typo } from "@/components/Typo";
+
 import { useErrorStore } from "@/store/error";
 import { useRouter } from "next/navigation";
 
@@ -134,9 +134,7 @@ export default function Posts() {
             {preview && (
               <>
                 <div className="w-full flex justify-between items-center">
-                  <Typo typo="block-title" as="h2" className="mb-8">
-                    Preview
-                  </Typo>
+                  <h2 className="block-title mb-8">Preview</h2>
                   <Button
                     type="button"
                     style={{
@@ -172,16 +170,14 @@ export default function Posts() {
                 </div>
               </>
             )}
-            <Typo
+            <h2
               style={{
                 display: preview ? "none" : "block",
               }}
-              typo="block-title"
-              as="h2"
-              className="mb-8"
+              className="block-title mb-8"
             >
               Novo Post
-            </Typo>
+            </h2>
             <form
               style={{
                 display: preview ? "none" : "flex",

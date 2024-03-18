@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useMemo } from "react";
 import { FiExternalLink } from "react-icons/fi";
-import { Typo } from "../Typo";
 
 export default function CTA({
   title,
@@ -38,15 +37,14 @@ export default function CTA({
       <div className="flex-1">
         <p className="text-[20px] font-light mb-1">{subtitle}</p>
         <h2 className="text-[48px] font-bold mb-12">{title}</h2>
-        <Typo
-          typo="paragraph"
+        <p
           style={{
             fontSize: "18px",
           }}
-          className="mb-16 text-opacity-80 font-light"
+          className="paragraph mb-16 text-opacity-80 font-light"
         >
           {children}
-        </Typo>
+        </p>
         <Link
           target="_blank"
           href={link.href}

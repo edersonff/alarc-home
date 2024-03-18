@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 import OutlinedButton from "@/components/Button/Outlined";
 import ServiceBlock from "@/components/Service";
-import { Info, Typo } from "@/components/Typo";
+import { Info } from "@/components/Typo";
 import ContentLayout from "@/layout/content";
 import { useInfoStore } from "@/store/info";
 import { useRouter } from "next/navigation";
@@ -17,9 +17,9 @@ export default function NossosServicos() {
     <ContentLayout info="nossosServicos">
       <div className="content flex flex-col gap-14 mt-24 mb-[72px]">
         <div>
-          <Typo typo="paragraph">
+          <div className="paragraph">
             <Info info="nossosServicos" text="text" />
-          </Typo>
+          </div>
           <br />
           <div className="flex flex-col gap-main my-20">
             <div className="flex xl-lg:flex-row flex-col gap-main">
@@ -87,9 +87,9 @@ export default function NossosServicos() {
           </div>
 
           <br />
-          <Typo typo="paragraph">
+          <div className="paragraph">
             <Info info="nossosServicos" text="text-end" />
-          </Typo>
+          </div>
         </div>
         <div className="flex gap-main xl-lg:mt-24">
           <Button onClick={() => push(nossosServicos.redirect)}>

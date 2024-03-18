@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* tailwind base */
+@layer base {
+  .nav {
+    @apply text-neutral-600 text-sm font-medium hover:text-primary hover:underline underline-offset-4 py-2 transition-all active:text-opacity-70;
+  }
+
+  .block {
+    @apply text-[32px] font-light leading-[32px];
+  }
+
+  .section-title {
+    @apply text-dark xl-lg:text-[40px] text-2xl font-bold font-['Adam'] uppercase leading-[44px] tracking-[5.20px];
+  }
+
+  .paragraph {
+    @apply text-dark xl-lg:text-[18px] text-[16px] leading-[280%] tracking-wide;
+  }
+
+  .button {
+    @apply text-xl font-bold;
+  }
+
+  .agency {
+    @apply text-black text-[32px] font-semibold;
+  }
+
+  .post {
+    @apply text-black text-[32px] font-medium;
+  }
+
+  .date {
+    @apply text-xs leading-normal text-dark/50 font-medium;
+  }
+
+  .block-title {
+    @apply text-[24px] font-bold;
+  }
+}
+
 * {
   @apply tracking-wider;
 }

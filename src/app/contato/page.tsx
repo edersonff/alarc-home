@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import { Typo } from "@/components/Typo";
+
 import Image from "@/components/Image";
 import React, { useEffect, useRef, useState } from "react";
 import { useInfoStore } from "@/store/info";
@@ -32,18 +32,17 @@ export default function Contato() {
                 <h1 className="xl-lg:text-[64px] text-5xl font-['Adam'] tracking-[0.06em] font-bold mb-8">
                   Entre em Contato
                 </h1>
-                <Typo
-                  typo="paragraph"
+                <div
                   style={{
                     fontSize: "18px",
                     lineHeight: "2",
                   }}
-                  className="xl-lg:max-w-[600px] font-light text-dark/70 mb-[90px]"
+                  className="paragraph xl-lg:max-w-[600px] font-light text-dark/70 mb-[90px]"
                 >
                   Est libero exercitationem occaecati ducimus sit corrupti. Eos
                   asperiores qui porro facere quis velit. Iure magnam cupiditate
                   et minima dolores iste.
-                </Typo>
+                </div>
                 <div className="flex xl-lg:flex-row flex-col xl-lg:gap-main gap-2">
                   <Button
                     style={{
@@ -78,8 +77,8 @@ export default function Contato() {
           loading="eager"
         />
       </div>
-      <div className="w-full my-[230px]">
-        <div className="content w-full flex flex-col gap-48">
+      <div className="w-full mt-[200px] mb-[300px]">
+        <div className="content w-full flex flex-col gap-64">
           <Show>
             <CTA
               title="Venha nos conhecer"
