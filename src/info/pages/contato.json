@@ -1,5 +1,14 @@
 {
   "title": "Fale Conosco",
   "label": "<span class='font-bold block'>FALE</span> Conosco",
-  "href": "/contato"
+  "href": "/contato",
+  "hero_title": "Fale Conosco",
+  "hero_text": "Est libero exercitationem occaecati ducimus sit corrupti. Eos asperiores qui porro facere quis velit. Iure magnam cupiditate et minima dolores iste.",
+  "address_title": "Venha nos conhecer",
+  "address_text": "Est libero exercitationem occaecati ducimus sit corrupti. Eos asperiores qui porro facere quis velit. Iure magnam cupiditate et minima dolores iste. Autem debitis vel porro itaque voluptatem.",
+  "whatsapp_title": "Mande mensagem",
+  "whatsapp_text": "Est libero exercitationem occaecati ducimus sit corrupti. Eos asperiores qui porro facere quis velit. Iure magnam cupiditate et minima dolores iste. Autem debitis vel porro itaque voluptatem.",
+  "forms_title": "Entre em Contato",
+  "forms_subtitle": "Nós iremos responder suas perguntas e questões.",
+  "forms_text": "Envie-nos uma mensagem e nós iremos responder suas perguntas e questões."
 }

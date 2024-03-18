@@ -16,6 +16,7 @@ import emailAnim from "@/../public/static/lottie/email.json";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Show from "@/components/Show";
+import { Info } from "@/components/Typo";
 
 export default function Contato() {
   const contato = useInfoStore((state) => state.contato);
@@ -30,7 +31,7 @@ export default function Contato() {
             <div className="w-full flex py-36">
               <div className="xl-lg:w-[60%]">
                 <h1 className="xl-lg:text-[64px] text-5xl font-['Adam'] tracking-[0.06em] font-bold mb-8">
-                  Entre em Contato
+                  <Info info="contato" text="hero_title" />
                 </h1>
                 <div
                   style={{
@@ -39,9 +40,7 @@ export default function Contato() {
                   }}
                   className="paragraph xl-lg:max-w-[600px] font-light text-dark/70 mb-[90px]"
                 >
-                  Est libero exercitationem occaecati ducimus sit corrupti. Eos
-                  asperiores qui porro facere quis velit. Iure magnam cupiditate
-                  et minima dolores iste.
+                  <Info info="contato" text="hero_text" />
                 </div>
                 <div className="flex xl-lg:flex-row flex-col xl-lg:gap-main gap-2">
                   <Button
@@ -81,7 +80,7 @@ export default function Contato() {
         <div className="content w-full flex flex-col gap-64">
           <Show>
             <CTA
-              title="Venha nos conhecer"
+              title={<Info info="contato" text="address_title" />}
               subtitle="Nosso endereço"
               link={{
                 label: "Antônio M Tôrres Filho, 49 - Centro, São Paulo",
@@ -98,14 +97,12 @@ export default function Contato() {
               }
               orientation="left"
             >
-              Est libero exercitationem occaecati ducimus sit corrupti. Eos
-              asperiores qui porro facere quis velit. Iure magnam cupiditate et
-              minima dolores iste. Autem debitis vel porro itaque voluptatem.
+              <Info info="contato" text="address_text" />
             </CTA>
           </Show>
           <Show>
             <CTA
-              title="Mande mensagem"
+              title={<Info info="contato" text="whatsapp_title" />}
               subtitle="Nosso Whatsapp"
               link={{
                 label: "Whatsapp - (47) 9 99625 9340",
@@ -121,9 +118,7 @@ export default function Contato() {
               }
               orientation="right"
             >
-              Est libero exercitationem occaecati ducimus sit corrupti. Eos
-              asperiores qui porro facere quis velit. Iure magnam cupiditate et
-              minima dolores iste. Autem debitis vel porro itaque voluptatem.
+              <Info info="contato" text="whatsapp_text" />
             </CTA>
           </Show>
         </div>
@@ -137,10 +132,10 @@ export default function Contato() {
         />
         <div className="py-24 relative z-30 text-center text-white">
           <h2 className="text-5xl mb-4 uppercase mix-blend-overlay">
-            Entre em <b>Contato</b>
+            <Info info="contato" text="forms_title" />
           </h2>
           <p className="text-[16px] font-light text-opacity-70">
-            Nós iremos responder suas perguntas e questões.
+            <Info info="contato" text="forms_subtitle" />
           </p>
         </div>
         <div className="w-full flex justify-center">
@@ -221,8 +216,7 @@ export function Forms() {
           <>
             <div className="mb-10">
               <p className="text-[16px] font-light">
-                Envie-nos uma mensagem e nós iremos responder suas perguntas e
-                questões.
+                <Info info="contato" text="forms_text" />
               </p>
             </div>
 

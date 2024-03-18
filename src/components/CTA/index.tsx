@@ -10,8 +10,8 @@ export default function CTA({
   link,
   orientation,
 }: {
-  title: string;
-  subtitle: string;
+  title: string | React.ReactNode;
+  subtitle: string | React.ReactNode;
   children: React.ReactNode;
   image: React.ReactNode;
   link: {
